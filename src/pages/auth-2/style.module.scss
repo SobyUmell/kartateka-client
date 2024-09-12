@@ -21,8 +21,8 @@
   font-weight: 800;
   font-size: 30px;
   line-height: 37.65px;
-  width: 243px;
-
+  width: 350px;
+text-align: center;
   font-family: Mulish;
 }
 .paragraph {
@@ -57,4 +57,5 @@
   justify-content: space-between;
   width: 100%;
   align-content: center;
+  flex-direction: row-reverse;
 }
