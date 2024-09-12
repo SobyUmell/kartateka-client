@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 18px;
+
+  div {
+    height: 3px;
+    width: 52px;
+    border-radius: 2px;
+    border: 1px solid #fff;
+  }
+}
+.activeBar {
+  background-color: #fff;
+}
