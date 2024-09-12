@@ -1,6 +1,6 @@
 import styles from "./style.module.scss";
 
-export function PageProgressBar({ pageNumber }) {
+export const PageProgressBar = ({ pageNumber }) => {
   return (
     <div className={styles.wrapper}>
       {[...new Array(3)].map((_, i) => (
@@ -8,4 +8,4 @@ export function PageProgressBar({ pageNumber }) {
       ))}
     </div>
   );
-}
+};

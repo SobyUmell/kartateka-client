@@ -1,14 +1,14 @@
 import { DirectionButton } from "../../shared/ui";
 import { PageProgressBar } from "../../shared/ui";
-import finger from "../../shared/assets/finger-print.png";
+import { fingerPrint } from "../../shared/assets";
 import styles from "./style.module.scss";
-export function Auth1() {
+export const Auth1 = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.blur}>
         <PageProgressBar pageNumber={1} />
         <div className={styles.content}>
-          <img src={finger} alt="finger" className={styles.img} />
+          <img src={fingerPrint} alt="finger" className={styles.img} />
           <h2 className={styles.header}>Защитите свои данные</h2>
           <p className={styles.paragraph}>
             С помощью передовой системы авторизации{" "}
@@ -22,4 +22,4 @@ export function Auth1() {
       </div>
     </div>
   );
-}
+};
