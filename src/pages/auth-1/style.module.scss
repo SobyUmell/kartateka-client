@@ -1,11 +1,20 @@
 .wrapper {
   height: 100%;
   width: 100%;
+  background-image: url("../../shared/assets/image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.blur {
+  height: 100%;
+  width: 100%;
+  background-color: #2b2a2a1a;
+  backdrop-filter: blur(5px);
 }
 
 .img {
   width: 360px;
-  height: 400px;
+  height: 360px;
 }
 .header {
   color: #fff;
@@ -13,18 +22,19 @@
   font-size: 30px;
   line-height: 37.65px;
   width: 243px;
-  margin-left: 58px;
+
+  font-family: Mulish;
 }
 .paragraph {
   font-size: 15px;
   font-weight: 300;
   line-height: 18.83px;
   text-align: left;
-  margin-left: 57px;
-  margin-top: 41px;
+
+  padding-top: 41px;
   width: 246px;
-  margin-bottom: 82px;
   color: #464646;
+  font-family: Mulish;
 }
 .span {
   font-size: 15px;
@@ -32,4 +42,19 @@
   line-height: 17.24px;
   text-align: left;
   color: #99f0d1;
+  font-family: Ubuntu;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: calc(100% - 23px);
+}
+
+.groupButton {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-content: center;
 }
