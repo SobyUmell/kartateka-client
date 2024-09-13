@@ -8,9 +8,9 @@ import lock from "./Lock.svg";
 import atsign from "./Atsign.svg";
 import eye from "./eye.png";
 import gypsum from "./gypsum.png";
-import hand from "/hand.png";
-import map from "/map.png";
-import loudspeaker from '/loudspeaker.png'
+import hand from "./hand.png";
+import map from "./map.png";
+import loudspeaker from './loudspeaker.png'
 export {
   arrowRight,
   arrowLeft,
