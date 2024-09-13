@@ -1,8 +1,6 @@
 import "./index.css";
 import ScreenContainer from "./app/screen-container/ui/ScreenContainer";
-import { Auth1 } from "./pages/auth-1";
-import { Auth2 } from "./pages/auth-2";
-import { Auth3 } from "./pages/auth-3";
+import { Auth1, Auth2, Auth3 } from "./pages";
 
 function App() {
   return (
