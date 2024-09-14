@@ -27,7 +27,7 @@ export const Info = (props) => {
         p={"Редактирование мини-профиля"}
         img={loudspeaker}
       ></InfoContainer>
-      <Button span="Upgrade">buisiness</Button>
+      <Button span="Upgrade">business</Button>
     </div>
   );
 };
