@@ -15,7 +15,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(43, 42, 42, 0.1);
+  background-image: url("../../shared/assets/hand.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-y: 5px;
   height: 100%;
   width: 100%;
   backdrop-filter: blur(2.5px);
@@ -30,6 +33,7 @@
   color: #ffffff;
   text-shadow: 0px 0px 10px #000000;
 }
+
 .headerDiv {
   transform: translate(0px, -7%);
   width: 100%;

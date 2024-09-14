@@ -10,7 +10,7 @@ export const Input = ({ setState, state, svg, text, ...props }) => {
           setState(e.target.value);
         }}
         className={classes.input}
-      ></input>
+      />
     </div>
   );
 };
