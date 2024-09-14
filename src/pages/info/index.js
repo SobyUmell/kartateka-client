@@ -10,7 +10,7 @@ export const Info = (props) => {
         <div className={styles.blur}>
           <img className={styles.absoluteArrow} src={arrowLeft}></img>
           <p className={styles.p}>
-            buisness<span className={styles.span}>Karta</span>
+            business<span className={styles.span}>Karta</span>
           </p>
         </div>
       </div>
