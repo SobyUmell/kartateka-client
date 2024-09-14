@@ -1,0 +1,29 @@
+.container {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 12%;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2e2e2e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+}
+.containerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.p {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: right;
+  width: 70%;
+  color: #ffffff;
+  margin-right: 15px;
+}

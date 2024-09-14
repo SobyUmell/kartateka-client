@@ -1,0 +1,1 @@
+import { InfoContainer } from "./info-container/index";
