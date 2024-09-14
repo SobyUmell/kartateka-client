@@ -1,11 +1,14 @@
 import styles from "./style.module.scss";
 import { InfoContainer } from "../../widgets/info-container";
 import { eye, gypsum, hand, loudspeaker } from "../../shared/assets";
+import { arrowLeft } from "../../shared/assets";
+import { Button } from "../../shared/ui";
 export const Info = (props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.img}>
         <div className={styles.blur}>
+          <img className={styles.absoluteArrow} src={arrowLeft}></img>
           <p className={styles.p}>
             buisness<span className={styles.span}>Karta</span>
           </p>
@@ -26,6 +29,7 @@ export const Info = (props) => {
         p={"Редактирование мини-профиля"}
         img={loudspeaker}
       ></InfoContainer>
+      <Button span="Upgrade">buisiness</Button>
     </div>
   );
 };

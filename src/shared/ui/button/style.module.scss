@@ -1,0 +1,41 @@
+.button {
+  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 100px 3px #ffffff;
+  border-radius: 12px;
+  background-color: black;
+  height: 41px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spanF {
+  font-family: "Sulphur Point";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  background: linear-gradient(90.02deg, #3f93fa 22.69%, #dbc3fd 48.88%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-right: 5px;
+}
+.spanS {
+  font-family: "Sulphur Point";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}

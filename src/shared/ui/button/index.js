@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./style.module.scss";
 
-export const Button = ({ children, ...props }) => {
+export const Button = ({ span, children, ...props }) => {
   return (
-    <button styles={styles.button} {...props}>
-      {children}
+    <button className={styles.button} {...props}>
+      <span className={styles.spanF}>{span + " "} </span>
+      <span className={styles.spanS}>{children}</span>
     </button>
   );
 };

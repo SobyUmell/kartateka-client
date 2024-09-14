@@ -2,8 +2,9 @@
   height: 100%;
   width: 100%;
   background-color: black;
+  display: flex;
+  flex-direction: column;
 }
-
 .img {
   width: 100%;
   background-image: url("../../shared/assets/map.png");
@@ -15,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../../shared/assets/hand.png");
+  //background-image: url("../../shared/assets/hand.png"); пока что убираем(ждем нормальное объявнение возможной реализации)
   background-repeat: no-repeat;
   background-position: right;
   background-position-y: 5px;
@@ -67,4 +68,10 @@
   text-fill-color: transparent;
 
   text-shadow: 0px 0px 10px #000000;
+}
+.absoluteArrow {
+  position: absolute;
+  left: 1%;
+  top: 15px;
+  cursor: pointer;
 }
