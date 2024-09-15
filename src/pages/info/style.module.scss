@@ -1,0 +1,85 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+.img {
+  width: 100%;
+  background-image: url("../../shared/assets/map.png");
+  height: 35%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.blur {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //background-image: url("../../shared/assets/hand.png"); пока что убираем(ждем нормальное объявнение возможной реализации)
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-y: 5px;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(2.5px);
+}
+.p {
+  font-family: "Sulphur Point";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: 35px;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px #000000;
+}
+
+.headerDiv {
+  transform: translate(0px, -7%);
+  width: 100%;
+  height: 12%;
+  background: linear-gradient(0deg, #000000 0%, #1b1b1b 100%);
+}
+.header {
+  width: 80%;
+  padding-left: 15px;
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 38px;
+
+  color: #ffffff;
+}
+.span {
+  font-family: "Sulphur Point";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 35px;
+  /* identical to box height */
+  text-align: center;
+
+  background: linear-gradient(90.04deg, #3f93fa 0.04%, #dbc3fd 54.21%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  text-shadow: 0px 0px 10px #000000;
+}
+.absoluteArrow {
+  position: absolute;
+  left: 1%;
+  top: 15px;
+  cursor: pointer;
+}
+.hand {
+  background-image: url("../../shared/assets/hand.png");
+  background-repeat: no-repeat;
+  background: size 50%;
+  background-position: right top;
+  width: 100%;
+  height: 100%;
+}
