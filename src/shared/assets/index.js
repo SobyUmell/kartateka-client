@@ -15,7 +15,7 @@ import houseIcon from "./house.svg";
 import mapIcon from "./map-icon.svg";
 import penIcon from "./pen-icon.svg";
 import coffeeIcon from "./coffee-icon.svg";
-
+import editProfile from "./edit-profile-icon.svg";
 export {
   arrowRight,
   arrowLeft,
@@ -34,4 +34,5 @@ export {
   mapIcon,
   penIcon,
   coffeeIcon,
+  editProfile,
 };
