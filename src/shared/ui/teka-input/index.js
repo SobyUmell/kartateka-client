@@ -9,12 +9,12 @@ export const TekaInput = ({ img, ...props }) => {
   }, []);
   return (
     <div className={styles.container}>
-      <img className={styles.absoluteImg} src={img}></img>
+      <img className={styles.absoluteImg} src={img} />
       <input
         type="text"
         className={styles.customInput}
         placeholder={array[index]}
-      ></input>
+      />
     </div>
   );
 };

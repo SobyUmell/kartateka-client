@@ -19,7 +19,14 @@
 
   color: #ffffff;
 }
-input::placeholder {
+.customInput::placeholder {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: -0.06em;
+
   color: #ffffff;
 }
 .absoluteImg {
