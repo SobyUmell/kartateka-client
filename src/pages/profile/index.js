@@ -6,8 +6,8 @@ export const Profile = () => {
 
   return (
     <WaveBackground>
-      <input type="file" value={image} />
-      <img src={image} alt="error" />
+      <input type="file" value={''} />
+      <img src={''} alt="error" />
       <NavBar />
     </WaveBackground>
   );
