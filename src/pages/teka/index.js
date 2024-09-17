@@ -8,8 +8,8 @@ export const Teka = () => {
     <WaveBackground>
       <div className={styles.container}>
         <TekaInput img={Search} />
-        <TekaWidget h2={'Просмотренно'}/>
-        <TekaWidget h2={'Рекомендации'}/>
+        <TekaWidget h={'Просмотрено'}></TekaWidget>
+        <TekaWidget h={'Рекомендации'}></TekaWidget>
         <NavBar />
       </div>
     </WaveBackground>
