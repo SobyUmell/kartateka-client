@@ -15,18 +15,9 @@ export const Info = (props) => {
       <div className={styles.headerDiv}>
         <h2 className={styles.header}>Создайте первую метку за 0₽</h2>
       </div>
-      <InfoContainer
-        p={"Добавление вашей метки на карту"}
-        img={eye}
-      ></InfoContainer>
-      <InfoContainer
-        p={"Возможность создавать контент"}
-        img={gypsum}
-      ></InfoContainer>
-      <InfoContainer
-        p={"Редактирование мини-профиля"}
-        img={loudspeaker}
-      ></InfoContainer>
+      <InfoContainer p={"Добавление вашей метки на карту"} img={eye} />
+      <InfoContainer p={"Возможность создавать контент"} img={gypsum} />
+      <InfoContainer p={"Редактирование мини-профиля"} img={loudspeaker} />
       <Button span="Upgrade">business</Button>
     </div>
   );
