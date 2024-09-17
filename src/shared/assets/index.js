@@ -10,7 +10,12 @@ import eye from "./eye.png";
 import gypsum from "./gypsum.png";
 import hand from "./hand.png";
 import map from "./map.png";
-import loudspeaker from './loudspeaker.png'
+import loudspeaker from "./loudspeaker.png";
+import houseIcon from "./house.svg";
+import mapIcon from "./map-icon.svg";
+import penIcon from "./pen-icon.svg";
+import coffeeIcon from "./coffee-icon.svg";
+
 export {
   arrowRight,
   arrowLeft,
@@ -24,5 +29,9 @@ export {
   gypsum,
   hand,
   map,
-  loudspeaker
+  loudspeaker,
+  houseIcon,
+  mapIcon,
+  penIcon,
+  coffeeIcon,
 };
