@@ -1,10 +1,14 @@
-import styes from "./style.module.scss";
+import styles from "./style.module.scss";
 import { editProfile } from "../../assets";
-export const InputNoBorder = () => {
+export const InputNoBorder = ({ onChange, value }) => {
   return (
-    <div className={styes.container}>
-      <input className={styes.input} type="text" />
-      <img src={editProfile} alt="editProfileIcon" className={styes.svg} />
+    <div className={styles.container}>
+      <input
+        type="text"
+        onChange={(e) => onChange(e.target.value)}
+        value={value}
+      />
+      <img src={editProfile} alt="editProfileIcon" />
     </div>
   );
 };

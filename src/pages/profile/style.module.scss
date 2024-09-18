@@ -1,0 +1,24 @@
+.inputImg[type="file"] {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  height: 156px;
+}
+
+.inputLabel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cotainerWithInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

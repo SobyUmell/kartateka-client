@@ -5,3 +5,4 @@ export { Button } from "./button";
 export { NavBar } from "./nav-bar";
 export { WaveBackground } from "./wave-background";
 export { InputNoBorder } from "./input-no-border";
+export { SelectTown } from "./select-town";
