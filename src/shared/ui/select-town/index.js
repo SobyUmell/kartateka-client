@@ -28,7 +28,6 @@ const customStyles = {
     fontFamily: "JetBrains Mono",
     fontStyle: "normal",
     fontWeight: "400",
-    fontSize: "13px",
     lineHeight: "17px",
     textAlign: "center",
     color: "white",
@@ -56,7 +55,6 @@ const customStyles = {
     fontFamily: "JetBrains Mono",
     fontStyle: "normal",
     fontWeight: "400",
-    fontSize: "13px",
     lineHeight: "17px",
     textAlign: "center",
     color: "white",
@@ -65,12 +63,14 @@ const customStyles = {
   }),
 };
 
-export const SelectTown = ({ townsList, svg, label }) => {
+export const SelectTown = ({ townsList, svg, label, disabled, setTown }) => {
   return (
     <div className={styles.wrapper}>
       <img className={styles.img} src={svg} alt={"error"} />
       <p className={styles.text}>{label}</p>
       <Select
+        onChange={(e) => setTown(e.value)}
+        isDisabled={disabled}
         defaultValue={townsList[0]}
         options={townsList}
         styles={customStyles}
@@ -87,22 +87,3 @@ export const SelectTown = ({ townsList, svg, label }) => {
     </div>
   );
 };
-
-/* Таганрог */
-
-// position: absolute;
-// width: 153px;
-// height: 36px;
-// left: calc(50% - 153px/2 - 0.5px);
-// top: 570px;
-
-// font-family: 'JetBrains Mono';
-// font-style: normal;
-// font-weight: 400;
-// font-size: 13px;
-// line-height: 17px;
-// display: flex;
-// align-items: center;
-// text-align: center;
-
-// color: #FFFFFF;

@@ -1,35 +1,34 @@
-import React from "react";
+import { useState } from "react";
 import {
   Input,
   InputNoBorder,
-  NavBar,
   SelectTown,
   WaveBackground,
 } from "../../shared/ui";
+import { NavBar } from "../../widgets";
 import styles from "./style.module.scss";
 import { atsign, lock, city, user } from "../../shared/assets";
-
+const townsList = [
+  { value: "Таганрог", label: "Таганрог" },
+  { value: "Махачкала", label: "Махачкала" },
+  { value: "Киев(Россия)", label: "Киев(Россия)" },
+];
 export const Profile = () => {
-  const [file, setFile] = React.useState(null);
-  const [fileUrl, setFileUrl] = React.useState(null);
-  const [email, setEmail] = React.useState("tyrew3441@gmail.com");
-  const [password, setPassword] = React.useState("12345678");
-  const [name, setName] = React.useState("Дмитрий Пучков");
-  const [town, setTown] = React.useState(null);
-  const [nickName, setNickName] = React.useState("tsuomicasi");
+  const [fileUrl, setFileUrl] = useState(null);
+  const [email, setEmail] = useState("tyrew3441@gmail.com");
+  const [password, setPassword] = useState("12345678");
+  const [name, setName] = useState("Дмитрий Пучков");
+  const [town, setTown] = useState(townsList[0].value);
+  const [nickName, setNickName] = useState("tsuomicasi");
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFile(file);
       setFileUrl(URL.createObjectURL(file));
     }
   };
-  const townsList = [
-    { value: "Таганрог", label: "Таганрог" },
-    { value: "Махачкала", label: "Махачкала" },
-    { value: "Киев(Россия)", label: "Киев(Россия)" },
-  ];
+
   return (
     <WaveBackground>
       <div className={styles.wrapper}>
@@ -43,11 +42,18 @@ export const Profile = () => {
           className={styles.inputLabel}
           htmlFor="input_file"
           style={fileUrl ? { backgroundImage: `url(${fileUrl})` } : null}
-        ></label>
+        >
+          {fileUrl ? null : <span>Нажмите, чтобы добавить фото профиля</span>}
+        </label>
       </div>
-      <InputNoBorder onChange={setNickName} value={nickName} />
+      <InputNoBorder
+        onChange={setNickName}
+        value={nickName}
+        onClick={() => setIsDisabled(!isDisabled)}
+      />
       <div className={styles.cotainerWithInput}>
         <Input
+          disabled={isDisabled}
           setState={setEmail}
           state={email}
           text={"Почта"}
@@ -55,6 +61,7 @@ export const Profile = () => {
           svg={atsign}
         />
         <Input
+          disabled={isDisabled}
           setState={setPassword}
           state={password}
           text={"Пароль"}
@@ -62,13 +69,20 @@ export const Profile = () => {
           svg={lock}
         />
         <Input
+          disabled={isDisabled}
           setState={setName}
           state={name}
           text={"Имя"}
           type={"text"}
           svg={user}
         />
-        <SelectTown townsList={townsList} label={"Город"} svg={city} />
+        <SelectTown
+          townsList={townsList}
+          label={"Город"}
+          svg={city}
+          disabled={isDisabled}
+          setTown={setTown}
+        />
       </div>
 
       <NavBar />

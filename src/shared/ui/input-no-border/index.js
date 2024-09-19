@@ -1,6 +1,7 @@
 import styles from "./style.module.scss";
 import { editProfile } from "../../assets";
-export const InputNoBorder = ({ onChange, value }) => {
+import { IconButton } from "..";
+export const InputNoBorder = ({ onChange, value, onClick }) => {
   return (
     <div className={styles.container}>
       <input
@@ -8,7 +9,7 @@ export const InputNoBorder = ({ onChange, value }) => {
         onChange={(e) => onChange(e.target.value)}
         value={value}
       />
-      <img src={editProfile} alt="editProfileIcon" />
+      <IconButton icon={editProfile} onClick={onClick} />
     </div>
   );
 };

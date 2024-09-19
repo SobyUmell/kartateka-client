@@ -1,14 +1,3 @@
-.wrapper {
-  position: fixed;
-  bottom: 0;
-  padding-bottom: 20px;
-  width: 100%;
-}
-.list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
 .item {
   display: flex;
   flex-direction: column;
@@ -21,6 +10,5 @@
   font-size: 8px;
   line-height: 11px;
   margin-top: 4px;
-
   color: #ffffff;
 }
