@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
-import { useState } from "react";
+import { array } from "./model/search-placeholder-data";
 export const TekaInput = ({ img, ...props }) => {
   const [index, setIndex] = useState();
-  const array = ["Что хочешь попробовать", "Какую кофейню ищите"];
   useEffect(() => {
     setIndex(Math.floor(Math.random() * array.length + 0));
   }, []);
