@@ -1,2 +1,2 @@
-import { InfoContainer } from "./info-container/index";
-import { TekaWidget } from "./teka-widget";
+export { InfoContainer } from "./info-container/index";
+export { TekaWidget } from "./teka-widget";

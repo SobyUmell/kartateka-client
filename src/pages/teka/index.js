@@ -2,7 +2,7 @@ import { NavBar, WaveBackground } from "../../shared/ui";
 import { TekaInput } from "../../shared/ui";
 import styles from "./style.module.scss";
 import { Search } from "../../shared/assets";
-import { TekaWidget } from "../../widgets/teka-widget/ui";
+import { TekaWidget } from "../../widgets";
 export const Teka = () => {
   return (
     <WaveBackground>
