@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 31px;
+  margin-top: 14px;
+  input {
+    border: none;
+    background: none;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 25px;
+    line-height: 31px;
+    color: #ffffff;
+    &:focus-visible {
+      border: none;
+      outline: none;
+      border-bottom: #ffffff 1px solid;
+    }
+    padding: 0;
+    margin: 0;
+    margin-left: 13px;
+    width: 80%;
+  }
+  button {
+    margin-right: 14px;
+  }
+}

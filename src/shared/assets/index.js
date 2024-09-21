@@ -15,6 +15,8 @@ import houseIcon from "./house.svg";
 import mapIcon from "./map-icon.svg";
 import penIcon from "./pen-icon.svg";
 import coffeeIcon from "./coffee-icon.svg";
+import editProfile from "./edit-profile-icon.svg";
+import saveIcon from "./save.svg";
 import Search from "./Search.svg";
 
 export {
@@ -35,5 +37,7 @@ export {
   mapIcon,
   penIcon,
   coffeeIcon,
+  editProfile,
+  saveIcon,
   Search,
 };

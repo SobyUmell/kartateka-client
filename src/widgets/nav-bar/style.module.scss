@@ -1,0 +1,11 @@
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 20px;
+  width: 100%;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
