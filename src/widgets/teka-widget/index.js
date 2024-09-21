@@ -1,0 +1,1 @@
+export { TekaWidget } from "./ui/index";

@@ -7,3 +7,6 @@ export { InputNoBorder } from "./input-no-border";
 export { SelectTown } from "./select-town";
 export { NavBarItem } from "./nav-bar-item";
 export { IconButton } from "./icon-button";
+export { NavBar } from "./nav-bar";
+export { TekaInput } from "./teka-input";
+export { PostItem } from "./PostItem";

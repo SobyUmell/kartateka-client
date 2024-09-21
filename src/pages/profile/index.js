@@ -87,7 +87,6 @@ export const Profile = () => {
           setTown={setTown}
         />
       </div>
-
       <NavBar />
     </WaveBackground>
   );
