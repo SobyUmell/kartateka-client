@@ -16,6 +16,7 @@ import mapIcon from "./map-icon.svg";
 import penIcon from "./pen-icon.svg";
 import coffeeIcon from "./coffee-icon.svg";
 import editProfile from "./edit-profile-icon.svg";
+import saveIcon from "./save.svg";
 export {
   arrowRight,
   arrowLeft,
@@ -35,4 +36,5 @@ export {
   penIcon,
   coffeeIcon,
   editProfile,
+  saveIcon,
 };

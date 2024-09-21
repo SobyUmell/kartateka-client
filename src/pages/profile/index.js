@@ -5,6 +5,7 @@ import {
   SelectTown,
   WaveBackground,
 } from "../../shared/ui";
+import { saveIcon, editProfile } from "../../shared/assets";
 import { NavBar } from "../../widgets";
 import styles from "./style.module.scss";
 import { atsign, lock, city, user } from "../../shared/assets";
@@ -20,7 +21,7 @@ export const Profile = () => {
   const [name, setName] = useState("Дмитрий Пучков");
   const [town, setTown] = useState(townsList[0].value);
   const [nickName, setNickName] = useState("tsuomicasi");
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -47,9 +48,11 @@ export const Profile = () => {
         </label>
       </div>
       <InputNoBorder
+        disabled={isDisabled}
         onChange={setNickName}
         value={nickName}
         onClick={() => setIsDisabled(!isDisabled)}
+        icon={isDisabled ? editProfile : saveIcon}
       />
       <div className={styles.cotainerWithInput}>
         <Input
