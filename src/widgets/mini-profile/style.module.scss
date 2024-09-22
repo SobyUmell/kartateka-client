@@ -1,0 +1,67 @@
+.container {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
+  background-color: black;
+}
+.header {
+  display: flex;
+  margin-top: 24px;
+  margin-left: 19px;
+  gap: 19px;
+}
+.grayCircle {
+  width: 68px;
+  height: 68px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+}
+.info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.title {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: -0.06em;
+  color: #ffffff;
+}
+.typePlace {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.06em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.address {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: -0.06em;
+  color: rgba(255, 255, 255, 0.6);
+}
+.groupButton {
+  display: flex;
+  gap: 19px;
+  margin-top: 6px;
+}
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 46px;
+}
+.contentItem {
+  width: 104px;
+  height: 183px;
+  background: rgba(217, 217, 217, 0.1);
+  border-radius: 8px;
+}
