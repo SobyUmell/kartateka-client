@@ -7,4 +7,4 @@ export const settings = {
   nextArrow: <></>,
   prevArrow: <></>,
 };
-export const postItems = ['','','','','','']
+export const postItems = ["", "", "", "", "", ""];
