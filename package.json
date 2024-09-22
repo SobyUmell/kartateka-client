@@ -11,7 +11,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
-    "react-scripts": "5.0.1",
     "react-select": "^5.8.0",
     "react-slick": "^0.30.2",
     "sass": "^1.77.8",
@@ -20,10 +19,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "tsc && vite build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.7"
   }
 }
