@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <ScreenContainer>
-        <Teka />
+        <Auth2 />
       </ScreenContainer>
     </div>
   );
