@@ -12,7 +12,7 @@
 }
 .input {
   text-align: center;
-  width: calc(100vw - 45px);
+  width: calc(100% - 45px);
   height: 50px;
   background: #000000;
   border: 1px solid #050505;
@@ -22,6 +22,8 @@
 }
 .wrapper {
   margin-top: 15px;
+  position: relative;
+  left: 5%;
 }
 .img {
   position: absolute;

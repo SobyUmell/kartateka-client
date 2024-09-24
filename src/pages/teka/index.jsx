@@ -10,8 +10,19 @@ export const Teka = () => {
   const [flag, setFlag] = useState(false);
   const seeMoreContent = () => {
     return (
-      <div style={{ display: "flex", width: "100%", justifyContent: "center" }}>
-        <Button onclick={() => setFlag(false)} span={"exit"}></Button>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "right",
+        }}
+      >
+        <Button
+          style={{}}
+          spanStyle={{ marginRight: "0px" }}
+          onclick={() => setFlag(false)}
+          span={"X"}
+        ></Button>
       </div>
     );
   };

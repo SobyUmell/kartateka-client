@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-export const Button = ({ onclick, style, span, children, ...props }) => {
+export const Button = ({ onclick,spanStyle, style, span, children, ...props }) => {
   return (
     <button
       onClick={onclick}
@@ -7,7 +7,7 @@ export const Button = ({ onclick, style, span, children, ...props }) => {
       style={style}
       {...props}
     >
-      <span className={styles.spanF}>{span + " "} </span>
+      <span style={spanStyle} className={styles.spanF}>{span + " "} </span>
       <span className={styles.spanS}>{children}</span>
     </button>
   );
