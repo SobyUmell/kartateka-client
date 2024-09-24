@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <ScreenContainer>
-        <Auth2 />
+        <Profile />
       </ScreenContainer>
     </div>
   );
