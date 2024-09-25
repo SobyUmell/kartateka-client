@@ -2,11 +2,44 @@ import styles from "./style.module.scss";
 import { miniProfileObj } from "../../shared/model";
 import { IconButton } from "../../shared/ui/icon-button";
 import { geoDataIcon, likeIcon, shareIcon } from "../../shared/assets";
-import { NavBar } from "../../shared/ui";
 import { getHeightMiniProfile } from "../../shared/lib/getHeightMiniProfile";
-export const MiniProfile = ({ img, height }) => {
+import { useState, useRef } from "react";
+export const MiniProfile = ({ img }) => {
+  const [height, setHeight] = useState(50);
+  const startTouchY = useRef(0);
+  const startHeight = useRef(50);
+
+  const handleTouchStart = (e) => {
+    startTouchY.current = e.touches[0].clientY;
+    startHeight.current = height;
+  };
+
+  const handleTouchMove = (e) => {
+    const currentTouchY = e.touches[0].clientY;
+    const deltaY = startTouchY.current - currentTouchY;
+
+    const newHeight = Math.min(
+      Math.max(startHeight.current + (deltaY / window.innerHeight) * 100, 50),
+      100
+    );
+    setHeight(newHeight);
+  };
+
+  const handleTouchEnd = () => {
+    if (height > 50 && height < 75) {
+      setHeight(75);
+    } else if (height > 75 && height < 100) {
+      setHeight(100);
+    }
+  };
   return (
-    <div style={getHeightMiniProfile(height)} className={styles.container}>
+    <div
+      style={getHeightMiniProfile(height)}
+      className={styles.container}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className={styles.header}>
         {img ? (
           <img className={styles.avatar} src={img} alt="profile avatar" />
@@ -31,7 +64,6 @@ export const MiniProfile = ({ img, height }) => {
         <div className={styles.contentItem} />
         <div className={styles.contentItem} />
       </div>
-      <NavBar />
     </div>
   );
 };
