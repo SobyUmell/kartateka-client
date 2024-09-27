@@ -2,7 +2,7 @@ export const customStyles = {
   control: (baseStyles, state) => ({
     ...baseStyles,
     backgroundColor: "black",
-    width: "calc(100vw - 45px)",
+    width: "100% ",
     height: "54px",
     border: "1px solid #050505",
     boxShadow: "0px 0px 10px 1px #ffffff",
@@ -57,5 +57,6 @@ export const customStyles = {
     color: "white",
     fontSize: "16px",
     caretСolor: "transparent",
+  
   }),
 };
