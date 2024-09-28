@@ -5,7 +5,7 @@ import { Search } from "../../shared/assets";
 import { TekaWidget } from "../../widgets";
 import { useState, useEffect } from "react";
 import Stories from "react-insta-stories";
-const object = {
+let object = {
   // объект, который будет ответственнен за контент, который передается в виджет для отрисовки
   postId: "",
   organizationId: "",
@@ -17,52 +17,64 @@ const object = {
   text: "",
   tags: "",
   img: "",
+  content: "",
 };
-const widgetContent = ({ index }) => {
-  // контент истории
+const seeMoreContent = () => {
+  // контент отображаемый при нажатии на seeMore
   return (
-    <>
-      <h2 style={{ color: "white" }}>Вы перешли на историю</h2>
-      <h2 style={{ color: "white" }}>{index}</h2>
-    </>
+    <div
+      style={{
+        display: "flex",
+        width: "100%",
+        justifyContent: "right",
+      }}
+    >
+      <Button
+        style={{ padding: "15px" }}
+        spanStyle={{ marginRight: "0px" }}
+        onclick={() => setFlag(false)}
+        span={"X"}
+      ></Button>
+    </div>
   );
 };
+let masTitle = ["История 0", "История 1", "История 2"];
+let masText;
+const widgetContent = ({ i, title }) => {
+  // контент истории
+  return (
+    <div className={styles.storyContainer}>
+      <h2 className={styles.title}>{title}</h2>
+      {!title ? seeMoreContent() : <></>}
+    </div>
+  );
+};
+const stories = [];
 export const Teka = () => {
   const [flag, setFlag] = useState(false);
-  const seeMoreContent = () => {
-    // контент отображаемый при нажатии на seeMore
-    return (
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "right",
-        }}
-      >
-        <Button
-          style={{ padding: "15px" }}
-          spanStyle={{ marginRight: "0px" }}
-          onclick={() => setFlag(false)}
-          span={"X"}
-        ></Button>
-      </div>
-    );
-  };
-  const [stories, setStories] = useState(null);
-
+  const [len, setLen] = useState(0);
   useEffect(() => {
-    // при каждом монтировании компонента, в widgetContent передается id по порядку
-    for (let i = 0; i < 3; i++) {
-      const object = { content: widgetContent, seeMore: seeMoreContent };
-      setStories([...stories, object]);
-    }
+    // фук предназначенный для вытягивания инфрормации об историях
+    setLen(3);
   }, []);
+  useEffect(() => {
+    // реализована загрузка историй из массива историй
+    for (let i = 0; i < len; i++) {
+      object = {
+        content: () => widgetContent({ i: i, title: masTitle[i] }),
+        postId: i,
+      };
+      stories.push(object);
+      console.log("история загружена ", { i });
+    }
+  }, [len]);
+
   return (
     <>
       {flag ? (
         <Stories
           stories={stories}
-          defaultInterval={2000}
+          defaultInterval={25000}
           width={"100%"}
           height={"100%"}
           loop={false}
