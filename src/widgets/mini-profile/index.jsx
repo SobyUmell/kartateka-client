@@ -27,7 +27,7 @@ export const MiniProfile = ({ img }) => {
       Math.max(startHeight.current + (deltaY / window.innerHeight) * 100, 0),
       100
     );
-    console.log(newHeight);
+
     if (newHeight === 0) {
       setHeight(0);
       setLocker(true);
@@ -80,7 +80,6 @@ export const MiniProfile = ({ img }) => {
       setHeight(50);
     }
   };
-  console.log(locker);
 
   if (height === 0) {
     return (
