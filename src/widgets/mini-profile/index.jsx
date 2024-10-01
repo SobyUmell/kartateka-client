@@ -8,6 +8,7 @@ import { TekaWidget } from "../../widgets";
 
 export const MiniProfile = ({ img }) => {
   const [height, setHeight] = useState(50);
+  const [locker, setLocker] = useState(false);
   const startTouchY = useRef(0);
   const startHeight = useRef(50);
 
@@ -26,15 +27,27 @@ export const MiniProfile = ({ img }) => {
       Math.max(startHeight.current + (deltaY / window.innerHeight) * 100, 0),
       100
     );
-    setHeight(newHeight);
+    console.log(newHeight);
+    if (newHeight === 0) {
+      setHeight(0);
+      setLocker(true);
+      return;
+    }
+    if (!locker) {
+      setHeight(newHeight);
+    }
   };
 
   const handleTouchEnd = () => {
-    if (height > 50 && height < 75) {
+    if (locker) {
+      setLocker(false);
+      return;
+    }
+    if (height > 50 && height <= 75) {
       setHeight(75);
     } else if (height > 75 && height <= 100) {
       setHeight(100);
-    } else if (height > 25 && height < 50) {
+    } else if (height > 20 && height <= 50) {
       setHeight(50);
     } else {
       setHeight(0);
@@ -42,6 +55,7 @@ export const MiniProfile = ({ img }) => {
   };
 
   const handleReturnBarTouchStart = (e) => {
+    setLocker(false);
     e.stopPropagation();
     startTouchY.current = e.touches[0].clientY;
     startHeight.current = 0;
@@ -56,7 +70,9 @@ export const MiniProfile = ({ img }) => {
       Math.max(startHeight.current + (deltaY / window.innerHeight) * 100, 0),
       50
     );
-    setHeight(newHeight);
+    if (!locker) {
+      setHeight(newHeight);
+    }
   };
 
   const handleReturnBarTouchEnd = () => {
@@ -64,7 +80,7 @@ export const MiniProfile = ({ img }) => {
       setHeight(50);
     }
   };
-  console.log(height);
+  console.log(locker);
 
   if (height === 0) {
     return (
