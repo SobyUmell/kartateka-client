@@ -12,11 +12,13 @@ export const MiniProfile = ({ img }) => {
   const startHeight = useRef(50);
 
   const handleTouchStart = (e) => {
+    e.stopPropagation();
     startTouchY.current = e.touches[0].clientY;
     startHeight.current = height;
   };
 
   const handleTouchMove = (e) => {
+    e.stopPropagation();
     const currentTouchY = e.touches[0].clientY;
     const deltaY = startTouchY.current - currentTouchY;
 
@@ -30,7 +32,7 @@ export const MiniProfile = ({ img }) => {
   const handleTouchEnd = () => {
     if (height > 50 && height < 75) {
       setHeight(75);
-    } else if (height > 75 && height < 100) {
+    } else if (height > 75 && height <= 100) {
       setHeight(100);
     } else if (height > 25 && height < 50) {
       setHeight(50);
@@ -40,11 +42,13 @@ export const MiniProfile = ({ img }) => {
   };
 
   const handleReturnBarTouchStart = (e) => {
+    e.stopPropagation();
     startTouchY.current = e.touches[0].clientY;
     startHeight.current = 0;
   };
 
   const handleReturnBarTouchMove = (e) => {
+    e.stopPropagation();
     const currentTouchY = e.touches[0].clientY;
     const deltaY = startTouchY.current - currentTouchY;
 
@@ -60,6 +64,7 @@ export const MiniProfile = ({ img }) => {
       setHeight(50);
     }
   };
+  console.log(height);
 
   if (height === 0) {
     return (
