@@ -18,6 +18,7 @@ import coffeeIcon from "./coffee-icon.svg";
 import editProfile from "./edit-profile-icon.svg";
 import saveIcon from "./save.svg";
 import Search from "./Search.svg";
+import eyeSvg from "./eye.svg";
 
 export {
   arrowRight,
@@ -40,4 +41,5 @@ export {
   editProfile,
   saveIcon,
   Search,
+  eyeSvg,
 };
