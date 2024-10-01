@@ -18,6 +18,9 @@ import coffeeIcon from "./coffee-icon.svg";
 import editProfile from "./edit-profile-icon.svg";
 import saveIcon from "./save.svg";
 import Search from "./Search.svg";
+import geoDataIcon from "./geo-data.svg";
+import shareIcon from "./share.svg";
+import likeIcon from "./like.svg";
 import eyeSvg from "./eye.svg";
 
 export {
@@ -41,5 +44,8 @@ export {
   editProfile,
   saveIcon,
   Search,
+  geoDataIcon,
+  shareIcon,
+  likeIcon,
   eyeSvg,
 };
