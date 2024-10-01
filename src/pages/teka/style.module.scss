@@ -1,7 +1,108 @@
+* {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 19px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
 .container {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.storyContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
+  align-items: center;
+  color: white;
+  background-color: black;
+}
+.seeMoreContent {
+  position: absolute;
+  bottom: 2%;
+  cursor: pointer;
+  z-index: 10000;
+}
+.seeMoreContentDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.storyContainerDiv {
+  width: 90%;
+  height: 30%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 4%;
+}
+.storyImg {
+  margin-top: 2%;
+  width: 100%;
+  height: 100%;
+}
+.views {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  background-color: white;
+  border: grey 1px solid;
+  border-radius: 15px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.data {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  background-color: white;
+  border: grey 1px solid;
+  border-radius: 15px;
+  padding-left: 1%;
+  font-size: 90%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.org {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  background-color: white;
+  border: grey 1px solid;
+  border-radius: 15px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.viewsSVG {
+  height: 50%;
+
+  margin-left: 10px;
+}
+.storyButton {
+  position: relative;
+}
+.info {
+  width: 90%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
 }

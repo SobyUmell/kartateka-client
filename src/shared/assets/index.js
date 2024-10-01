@@ -21,6 +21,7 @@ import Search from "./Search.svg";
 import geoDataIcon from "./geo-data.svg";
 import shareIcon from "./share.svg";
 import likeIcon from "./like.svg";
+import eyeSvg from "./eye.svg";
 
 export {
   arrowRight,
@@ -46,4 +47,5 @@ export {
   geoDataIcon,
   shareIcon,
   likeIcon,
+  eyeSvg,
 };
