@@ -4,3 +4,4 @@ export { Auth3 } from "./auth-3/index";
 export { Info } from "./info/index";
 export { Profile } from "./profile/index";
 export {Teka} from "./teka/index"
+export {Map} from "./map/index"
