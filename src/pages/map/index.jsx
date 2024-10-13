@@ -25,7 +25,7 @@ export const Map = () => {
         <div id="map" className={styles.map}>
 
         </div>
-      <NavBar />
+        <NavBar />
     </div>
   );
 };
