@@ -8,8 +8,7 @@ function App() {
   return (
     <div className="App">
       <ScreenContainer>
-        <MiniProfile />
-        <NavBar />
+        <Auth2 />
       </ScreenContainer>
     </div>
   );
