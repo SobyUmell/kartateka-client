@@ -18,12 +18,11 @@ import coffeeIcon from "./coffee-icon.svg";
 import editProfile from "./edit-profile-icon.svg";
 import saveIcon from "./save.svg";
 import Search from "./Search.svg";
-import eyeSvg from "./eye.svg";
 import geoDataIcon from "./geo-data.svg";
 import shareIcon from "./share.svg";
 import likeIcon from "./like.svg";
 import eyeSvg from "./eye.svg";
-
+import ellipse from "./Ellipse2.svg";
 export {
   arrowRight,
   arrowLeft,
@@ -46,4 +45,8 @@ export {
   saveIcon,
   Search,
   eyeSvg,
+  geoDataIcon,
+  shareIcon,
+  likeIcon,
+  ellipse,
 };
