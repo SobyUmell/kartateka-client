@@ -6,7 +6,7 @@ import 'mmr-gl/dist/mmr-gl.css';
 
 export const Map = () => {
     useEffect( () => {
-        mmrgl.accessToken = 'accessToken';
+        mmrgl.accessToken = '6960065e78ec62fc5f7ae70b0472ffcb37ad03630e3073560b9c8dba3e3dff83';
      
         const map = new mmrgl.Map({
           container: 'map',
