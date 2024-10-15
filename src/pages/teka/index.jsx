@@ -5,8 +5,7 @@ import { Search } from "../../shared/assets";
 import { TekaWidget } from "../../widgets";
 import { useState, useEffect } from "react";
 import Stories from "react-insta-stories";
-import { eyeSvg } from "../../shared/assets";
-import { ellipse } from "../../shared/assets";
+import { seeMore } from "../../widgets";
 let object = {
   // объект, который будет ответственнен за контент, который передается в виджет для отрисовки
   postId: "",
@@ -38,47 +37,7 @@ let masUrls = [
 ];
 let masOrg = ["Concept", "Tbank", "Yandex"];
 let masSrc = ["", "", ""];
-const widgetContent = ({ i, title, setFlag, text, views, data, org, Src }) => {
-  // контент истории
-  const [src, setSrc] = useState();
-  useEffect(() => {
-    // если приходит пустой image - выводим белый круг
-    if (!Src) {
-      setSrc(ellipse);
-    } else {
-      setSrc(Src);
-    }
-  }, []);
 
-  return (
-    <div className={styles.storyContainer}>
-      <div className={styles.organizationDiv}>
-        <div className={styles.organizationDivOrg}>
-          <img className={styles.organizationImg} src={src} />
-          <div className={styles.organizationDivOrgRight}>
-            <h3 style={{ marginBottom: "5px" }} className={styles.organization}>
-              {org}
-            </h3>
-            <p className={styles.date}>{data}</p>
-          </div>
-        </div>
-        <button onClick={() => setFlag(false)} className={styles.storyButton}>
-          X
-        </button>
-      </div>
-      <h2 className={styles.title}>{title}</h2>
-      <div className={styles.storyContainerDiv}>
-        <p>{text}</p>
-      </div>
-      <div className={styles.info}>
-        <div className={styles.views}>
-          {views}
-          <img className={styles.viewsSVG} src={eyeSvg} alt="views" />
-        </div>
-      </div>
-    </div>
-  );
-};
 const stories = [];
 export const Teka = () => {
   const [flag, setFlag] = useState(false);
@@ -92,8 +51,9 @@ export const Teka = () => {
     for (let i = 0; i < len; i++) {
       object = {
         url: masUrls[i],
-        seeMore: () =>
-          widgetContent({
+        seeMore: ({ close }) =>
+          seeMore({
+            close,
             i: i,
             title: masTitle[i],
             setFlag: setFlag,

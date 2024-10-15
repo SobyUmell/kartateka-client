@@ -1,0 +1,123 @@
+.storyContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 55px;
+  color: white;
+  background-color: black;
+}
+.storyContainerDiv {
+  width: 92%;
+  height: calc(100% - 140px);
+  margin-left: 5%;
+  margin-right: 3%;
+  margin-top: 4%;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.06em;
+  color: rgba(255, 255, 255, 0.65);
+}
+.organizationDiv {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.organizationDivOrgRight {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.organizationDivOrg {
+  display: flex;
+  margin-right: auto;
+  margin-left: 3%;
+  align-items: center;
+}
+.date {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: -0.06em;
+  color: rgba(255, 255, 255, 0.65);
+}
+.title {
+  margin-top: 20%;
+  margin-left: 5%;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.06em;
+  color: #ffffff;
+}
+.views {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.06em;
+
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  border-radius: 15px;
+  padding-left: 1%;
+  padding-right: 2%;
+}
+.viewsSVG {
+  height: 50%;
+  margin-left: 10px;
+}
+.organization {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -0.06em;
+
+  color: #ffffff;
+}
+.storyButton {
+  position: relative;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 53px;
+  text-align: center;
+  letter-spacing: -0.06em;
+  background: none;
+  border: none;
+  margin-right: 2%;
+}
+.text {
+  height: calc(100% - 100px);
+  overflow-y: scroll;
+}
+.info {
+  width: 90%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
