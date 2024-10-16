@@ -22,7 +22,7 @@ import geoDataIcon from "./geo-data.svg";
 import shareIcon from "./share.svg";
 import likeIcon from "./like.svg";
 import eyeSvg from "./eye.svg";
-
+import ellipse from "./Ellipse2.svg";
 export {
   arrowRight,
   arrowLeft,
@@ -44,8 +44,9 @@ export {
   editProfile,
   saveIcon,
   Search,
+  eyeSvg,
   geoDataIcon,
   shareIcon,
   likeIcon,
-  eyeSvg,
+  ellipse,
 };
