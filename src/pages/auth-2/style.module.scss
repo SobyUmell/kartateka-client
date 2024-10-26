@@ -24,7 +24,6 @@
   width: 350px;
   text-align: center;
   font-family: Mulish;
-  margin-top: 40px;
 }
 .paragraph {
   font-size: 15px;
@@ -48,9 +47,9 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: calc(100% - 23px);
+  height: calc(100% );
 }
 
 .groupButton {
@@ -58,7 +57,9 @@
   justify-content: space-between;
   width: 100%;
   align-content: center;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0px;
 }
 .inputWrapper {
   display: flex;

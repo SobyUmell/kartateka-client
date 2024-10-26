@@ -3,9 +3,13 @@
   justify-content: center;
   gap: 14px;
   padding-top: 18px;
+  position: absolute;
+  top: 0px;
+  left: 10%;
+  right: 10%;
 
   div {
-    height: 3px;
+    height: 4px;
     width: 52px;
     border-radius: 2px;
     border: 1px solid #fff;
