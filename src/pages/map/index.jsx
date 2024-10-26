@@ -1,6 +1,8 @@
 import s from "./map.module.scss";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 export const MapPage = () => {
+  // I know where you live, your IP and MAC addresses are next
+  const position = [47.212216916047225, 38.915121793521074];
   return (
     <div className={s.map_page}>
       <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
@@ -14,7 +16,6 @@ export const MapPage = () => {
           </Popup>
         </Marker>
       </MapContainer>
-      ,
     </div>
   );
 };
