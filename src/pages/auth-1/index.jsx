@@ -3,7 +3,9 @@ import { PageProgressBar } from "../../shared/ui";
 import { fingerPrint } from "../../shared/assets";
 import styles from "./style.module.scss";
 import { WaveBackground } from "../../shared/ui";
+import { useNavigate } from "react-router-dom";
 export const Auth1 = () => {
+  const router = useNavigate();
   return (
     <WaveBackground>
       <PageProgressBar pageNumber={1} />
@@ -15,8 +17,7 @@ export const Auth1 = () => {
           <span className={styles.span}>concept id</span>
         </p>
         <div className={styles.groupButton}>
-          <DirectionButton text={"Назад"} direction={0} />
-          <DirectionButton text={"Продолжить"} direction={1} />
+          <DirectionButton text={"Продолжить"} direction={1} onClick={()=>{router("/auth-2");}} />
         </div>
       </div>
     </WaveBackground>

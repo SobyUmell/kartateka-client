@@ -35,12 +35,14 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: calc(100% - 23px);
+  height: calc(100% - 123px);
 }
 
 .groupButton {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   width: 100%;
   align-content: center;
+  position: absolute;
+  bottom: 0px;
 }
