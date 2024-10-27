@@ -4,6 +4,7 @@ export const InputNoBorder = ({ onChange, value, onClick, icon, disabled }) => {
   return (
     <div className={styles.container}>
       <input
+        style={{ marginLeft: "20px" }}
         disabled={disabled}
         type="text"
         onChange={(e) => onChange(e.target.value)}

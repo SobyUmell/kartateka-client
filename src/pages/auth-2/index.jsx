@@ -14,7 +14,7 @@ export const Auth2 = () => {
   const [password, setPassword] = useState("");
   /* 
   const [name, setName] = useState("");
-  const [town, setTown] = useState("Таганрог");
+  const [town, setTown] = useState(townsList[0].value);
   */
   const object = {
     values: ["Почта", "Пароль", "Имя", "Город"],

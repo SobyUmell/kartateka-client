@@ -10,7 +10,7 @@ export const Auth3 = () => {
       <div className={styles.blur}>
         <PageProgressBar pageNumber={3} />
         <div className={styles.content}>
-        <div>
+          <div style={{display:'flex', justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
             <h2 className={styles.header}>Почти готово....</h2>
             <p className={styles.paragraph}>
               Пожалуйста, подтвердите свою личность через письмо
