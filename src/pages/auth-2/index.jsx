@@ -1,16 +1,19 @@
-import { DirectionButton } from "../../shared/ui";
-import { PageProgressBar } from "../../shared/ui";
-import { Input } from "../../shared/ui";
-import { atsign, lock, city, user } from "../../shared/assets";
+import {
+  DirectionButton,
+  PageProgressBar,
+  Input,
+  SelectTown,
+} from "../../shared/ui";
+import { city, atsign, lock, user } from "../../shared/assets";
 import styles from "./style.module.scss";
 import { useState } from "react";
-import { SelectTown } from "../../shared/ui";
 import { useNavigate } from "react-router-dom";
+import { townsList } from "../../shared/model"; // испортируем список городов, которые поддерживает приложение
 export const Auth2 = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [town, setTown] = useState("");
+  const [town, setTown] = useState("Таганрог");
   const object = {
     values: ["Почта", "Пароль", "Имя", "Город"],
     svgs: [atsign, lock, user, city],
@@ -18,11 +21,6 @@ export const Auth2 = () => {
     states: [email, password, name, town],
     types: ["email", "password", "text"],
   };
-  const townsList = [
-    { value: "Таганрог", label: "Таганрог" },
-    { value: "Махачкала", label: "Махачкала" },
-    { value: "Киев(Россия)", label: "Киев(Россия)" },
-  ];
   const router = useNavigate();
   return (
     <div className={styles.wrapper}>
@@ -32,7 +30,8 @@ export const Auth2 = () => {
           <h2 className={styles.header}>Создание аккаунта</h2>
           <div className={styles.inputWrapper}>
             <form>
-              {[...new Array(3)].map((value, index) => {
+              {[...new Array(2)].map((value, index) => {
+                // чтобы отрисовать последний инпут заменить 2 на 3
                 return (
                   <Input
                     setState={object.setStates[index]}
@@ -44,12 +43,14 @@ export const Auth2 = () => {
                   />
                 );
               })}
+              {/* закоментировал selector города
               <SelectTown
                 townsList={townsList}
                 label={"Город"}
                 svg={city}
                 setTown={setTown}
               />
+              */}
             </form>
           </div>
           <div className={styles.groupButton}>
