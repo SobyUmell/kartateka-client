@@ -4,6 +4,7 @@
   background-image: url("../../shared/assets/image.png");
   background-repeat: no-repeat;
   background-size: cover;
+  
 }
 .blur {
   height: 100%;
@@ -24,14 +25,13 @@
   width: 350px;
   text-align: center;
   font-family: Mulish;
-  margin-top: 25vh;
+  margin-bottom: 5vh;
 }
 .paragraph {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 18.83px;
   text-align: center;
-  margin-bottom: 40vh;
   width: 90vw;
   color: #ffffff;
   font-family: Mulish;
@@ -47,7 +47,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: calc(100% - 23px);
 }

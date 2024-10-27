@@ -12,13 +12,15 @@ import { townsList } from "../../shared/model"; // испортируем спи
 export const Auth2 = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  /* 
   const [name, setName] = useState("");
   const [town, setTown] = useState("Таганрог");
+  */
   const object = {
     values: ["Почта", "Пароль", "Имя", "Город"],
     svgs: [atsign, lock, user, city],
-    setStates: [setEmail, setPassword, setName, setTown],
-    states: [email, password, name, town],
+    setStates: [setEmail, setPassword /* setName, setTown*/],
+    states: [email, password /* name, town*/],
     types: ["email", "password", "text"],
   };
   const router = useNavigate();
