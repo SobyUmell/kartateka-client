@@ -23,6 +23,9 @@ export const Auth2 = () => {
     states: [email, password /* name, town*/],
     types: ["email", "password", "text"],
   };
+
+  const [visible,setVisible] = useState(false);
+
   const router = useNavigate();
   return (
     <div className={styles.wrapper}>
@@ -42,9 +45,13 @@ export const Auth2 = () => {
                     key={index}
                     text={object.values[index]}
                     type={object.types[index]}
+                    visible={visible}
+                    setVisible={setVisible}
                   />
+                  
                 );
               })}
+              <svg></svg>
               {/* закоментировал selector города
               <SelectTown
                 townsList={townsList}
