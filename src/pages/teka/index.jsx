@@ -1,4 +1,5 @@
-import { NavBar, WaveBackground, TekaInput } from "../../shared/ui";
+import { WaveBackground, TekaInput } from "../../shared/ui";
+import { NavBar } from "../../widgets";
 import styles from "./style.module.scss";
 import { Search } from "../../shared/assets";
 import { TekaWidget } from "../../widgets";

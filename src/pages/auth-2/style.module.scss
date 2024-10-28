@@ -49,7 +49,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100% );
+  height: calc(100%);
 }
 
 .groupButton {
@@ -65,4 +65,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.eye {
+  width: 45px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  right: 25px;
+  margin-top: 132px;
 }

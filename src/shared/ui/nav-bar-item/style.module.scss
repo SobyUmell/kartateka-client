@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 .span {
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 400;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 11px;
   margin-top: 4px;
   color: #ffffff;

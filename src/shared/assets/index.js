@@ -23,6 +23,7 @@ import shareIcon from "./share.svg";
 import likeIcon from "./like.svg";
 import eyeSvg from "./eye.svg";
 import ellipse from "./Ellipse2.svg";
+import smallEye from "./smallEye.svg";
 export {
   arrowRight,
   arrowLeft,
@@ -49,4 +50,5 @@ export {
   shareIcon,
   likeIcon,
   ellipse,
+  smallEye,
 };
