@@ -4,6 +4,7 @@ export const privateRoutes = [
   { path: "/profile", component: <Profile></Profile>, exact: true },
   { path: "/info", component: <Info></Info>, exact: true },
   { path: "/teka", component: <Teka></Teka>, exact: true },
+  { path: "/map", component: <MapPage></MapPage>, exact: true },
 ];
 export const publicRoutes = [
   { path: "/", component: <Auth1></Auth1>, exact: true },

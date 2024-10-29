@@ -1,7 +1,7 @@
-import { NavBar, WaveBackground, TekaInput } from "../../shared/ui";
+import { WaveBackground, TekaInput } from "../../shared/ui";
 import styles from "./style.module.scss";
 import { Search } from "../../shared/assets";
-import { TekaWidget } from "../../widgets";
+import { TekaWidget, NavBar} from "../../widgets";
 import { useState, useEffect } from "react";
 import Stories from "react-insta-stories";
 import { seeMore } from "../../widgets";
