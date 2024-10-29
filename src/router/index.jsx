@@ -1,4 +1,4 @@
-import { Profile, Info, Teka, Auth1, Auth2, Auth3 } from "../pages";
+import { Profile, Info, Teka, Auth1, Auth2, Auth3, MapPage } from "../pages";
 export const privateRoutes = [
   { path: "/", component: <Teka></Teka>, exact: true },
   { path: "/profile", component: <Profile></Profile>, exact: true },
