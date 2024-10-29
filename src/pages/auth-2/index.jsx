@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { townsList } from "../../shared/model"; // испортируем список городов, которые поддерживает приложение
 import { smallEye } from "../../shared/assets";
+
 export const Auth2 = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,11 +25,12 @@ export const Auth2 = () => {
     states: [email, password /* name, town*/],
     types: ["email", "password", "text"],
   };
-
+  
   const [visible, setVisible] = useState(false);
   const swapstate = () => {
     setVisible(!visible);
   };
+
   const router = useNavigate();
   return (
     <div className={styles.wrapper}>
@@ -58,7 +60,7 @@ export const Auth2 = () => {
                   />
                 );
               })}
-
+              
               {/* закоментировал selector города
               <SelectTown
                 townsList={townsList}
