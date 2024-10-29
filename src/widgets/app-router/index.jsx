@@ -7,34 +7,40 @@ export const AppRouter = () => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.isAuth);
   useEffect(() => {
-    console.log(auth);
+    console.log("Авторизированы? " + auth);
   }, []);
 
   return (
     <Routes>
       {auth
-        ? privateRoutes.map((route, index) => (
-            <Route
-              key={index}
-              element={route.component}
-              path={route.path}
-              exact={route.exact}
-            />
-          ))
-        : publicRoutes.map((route, index) => (
-            <Route
-              key={index}
-              element={route.component}
-              path={route.path}
-              exact={route.exact}
-            />
-          ))}
+        ? privateRoutes.map(
+            // роутинг для авторизированного пользователя
+            (route, index) => (
+              <Route
+                key={index}
+                element={route.component}
+                path={route.path}
+                exact={route.exact}
+              />
+            )
+          )
+        : publicRoutes.map(
+            // роутинг для не авторизированного пользователя
+            (route, index) => (
+              <Route
+                key={index}
+                element={route.component}
+                path={route.path}
+                exact={route.exact}
+              />
+            )
+          )}
       {auth ? (
-        <Route path="*" element={<Navigate to={"/Teka"} />} />
+        <Route path="*" element={<Navigate to={"/profile"} />} />
       ) : (
         <Route path="*" element={<Navigate to={"/auth-1"} />} />
       )}
     </Routes>
   );
-  // Route path='*' - будет переносить нас нас траницу 404
+  // Route path='*' - будет переносить нас на базовую страницу
 };
