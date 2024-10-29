@@ -5,9 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { settings } from "../model";
 import { PostItem } from "../../../shared/ui";
 import { postItems } from "../model";
-export const TekaWidget = ({ clickHandler, label, ...props }) => {
+export const TekaWidget = ({ style, clickHandler, label, ...props }) => {
   return (
-    <div className={styles.sliderContainer}>
+    <div style={style} className={styles.sliderContainer}>
       <h2 className={styles.h}>{label}</h2>
       <Slider {...settings}>
         {postItems.map((index, value) => {

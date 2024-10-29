@@ -9,27 +9,31 @@ import { saveIcon, editProfile } from "../../shared/assets";
 import { NavBar } from "../../widgets";
 import styles from "./style.module.scss";
 import { atsign, lock, city, user } from "../../shared/assets";
-const townsList = [
-  { value: "Таганрог", label: "Таганрог" },
-  { value: "Махачкала", label: "Махачкала" },
-  { value: "Киев(Россия)", label: "Киев(Россия)" },
-];
+import { townsList } from "../../shared/model";
+import { TekaWidget } from "../../widgets";
+
 export const Profile = () => {
   const [fileUrl, setFileUrl] = useState(null);
-  const [email, setEmail] = useState("tyrew3441@gmail.com");
-  const [password, setPassword] = useState("12345678");
-  const [name, setName] = useState("Дмитрий Пучков");
-  const [town, setTown] = useState(townsList[0].value);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [flag, setFlag] = useState(false); // длина массива с моими местами
+  //const [name, setName] = useState("");
+  //const [town, setTown] = useState(townsList[0].value);
   const [nickName, setNickName] = useState("tsuomicasi");
   const [isDisabled, setIsDisabled] = useState(true);
-
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       setFileUrl(URL.createObjectURL(file));
     }
   };
-
+  const object = {
+    values: ["Почта", "Пароль", "Имя", "Город"],
+    svgs: [atsign, lock, user, city],
+    setStates: [setEmail, setPassword /* setName, setTown*/],
+    states: [email, password /* name, town*/],
+    types: ["email", "password", "text"],
+  };
   return (
     <WaveBackground>
       <div className={styles.wrapper}>
@@ -54,38 +58,37 @@ export const Profile = () => {
         onClick={() => setIsDisabled(!isDisabled)}
         icon={isDisabled ? editProfile : saveIcon}
       />
-      <div className={styles.cotainerWithInput}>
-        <Input
-          disabled={isDisabled}
-          setState={setEmail}
-          state={email}
-          text={"Почта"}
-          type={"email"}
-          svg={atsign}
-        />
-        <Input
-          disabled={isDisabled}
-          setState={setPassword}
-          state={password}
-          text={"Пароль"}
-          type={"password"}
-          svg={lock}
-        />
-        <Input
-          disabled={isDisabled}
-          setState={setName}
-          state={name}
-          text={"Имя"}
-          type={"text"}
-          svg={user}
-        />
-        <SelectTown
-          townsList={townsList}
-          label={"Город"}
-          svg={city}
-          disabled={isDisabled}
-          setTown={setTown}
-        />
+      <div className={styles.container}>
+        <div className={styles.cotainerWithInput}>
+          <form>
+            {[...new Array(2)].map((value, index) => (
+              <Input
+                key={index}
+                disabled={isDisabled}
+                setState={object.setStates[index]}
+                state={object.states[index]}
+                text={object.values[index]}
+                type={object.types[index]}
+                svg={object.svgs[index]}
+              />
+            ))}
+            {/*<SelectTown
+              townsList={townsList}
+              label={"Город"}
+              svg={city}
+              disabled={isDisabled}
+              setTown={setTown}
+            /> */}
+          </form>
+        </div>
+        <div className={styles.cotainerForWidget}>
+          <TekaWidget
+            clickHandler={() => {
+              setFlag(true);
+            }}
+            label={"Просмотрено"}
+          />
+        </div>
       </div>
       <NavBar />
     </WaveBackground>

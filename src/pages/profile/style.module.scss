@@ -4,7 +4,9 @@
 
 .wrapper {
   width: 100%;
-  height: 156px;
+  top: 0px;
+  height: 18vh;
+  position: relative;
 }
 
 .inputLabel {
@@ -22,9 +24,18 @@
     font-family: "JetBrains Mono";
   }
 }
-
+.container {
+  height: calc(100% - 18% - 70px - 45px);
+}
 .cotainerWithInput {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.cotainerForWidget {
+  margin-top: 5%;
+  height: calc(100% - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

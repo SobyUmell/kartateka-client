@@ -22,19 +22,18 @@
   font-size: 30px;
   line-height: 37.65px;
   width: 350px;
-  text-align: center;
   font-family: Mulish;
-  margin-top: 25vh;
+  margin-bottom: 5vh;
+  text-align: center;
 }
 .paragraph {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 18.83px;
-  text-align: center;
-  margin-bottom: 40vh;
-  width: 90vw;
+  width: 90%;
   color: #ffffff;
   font-family: Mulish;
+  text-align: center;
 }
 .span {
   font-size: 15px;
@@ -47,7 +46,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: calc(100% - 23px);
 }
