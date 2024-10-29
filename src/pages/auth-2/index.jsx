@@ -9,6 +9,8 @@ import styles from "./style.module.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { townsList } from "../../shared/model"; // испортируем список городов, которые поддерживает приложение
+import { smallEye } from "../../shared/assets";
+
 export const Auth2 = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,6 +25,12 @@ export const Auth2 = () => {
     states: [email, password /* name, town*/],
     types: ["email", "password", "text"],
   };
+  
+  const [visible, setVisible] = useState(false);
+  const swapstate = () => {
+    setVisible(!visible);
+  };
+
   const router = useNavigate();
   return (
     <div className={styles.wrapper}>
@@ -32,6 +40,11 @@ export const Auth2 = () => {
           <h2 className={styles.header}>Создание аккаунта</h2>
           <div className={styles.inputWrapper}>
             <form>
+              <img
+                onClick={swapstate}
+                className={styles.eye}
+                src={smallEye}
+              ></img>
               {[...new Array(2)].map((value, index) => {
                 // чтобы отрисовать последний инпут заменить 2 на 3
                 return (
@@ -42,9 +55,12 @@ export const Auth2 = () => {
                     key={index}
                     text={object.values[index]}
                     type={object.types[index]}
+                    visible={visible}
+                    setVisible={setVisible}
                   />
                 );
               })}
+              
               {/* закоментировал selector города
               <SelectTown
                 townsList={townsList}
