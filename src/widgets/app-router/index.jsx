@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { privateRoutes, publicRoutes } from "../../router/index";
 import { Teka, Auth1 } from "../../pages";
 export const AppRouter = () => {
@@ -30,9 +30,9 @@ export const AppRouter = () => {
             />
           ))}
       {auth ? (
-        <Route path="*" element={<Teka />} />
+        <Route path="*" element={<Navigate to={"/Teka"} />} />
       ) : (
-        <Route path="*" element={<Auth1 />} />
+        <Route path="*" element={<Navigate to={"/auth-1"} />} />
       )}
     </Routes>
   );
