@@ -5,10 +5,16 @@ import {
   SelectTown,
   WaveBackground,
 } from "../../shared/ui";
-import { saveIcon, editProfile } from "../../shared/assets";
 import { NavBar } from "../../widgets";
 import styles from "./style.module.scss";
-import { atsign, lock, city, user } from "../../shared/assets";
+import {
+  atsign,
+  lock,
+  city,
+  user,
+  saveIcon,
+  editProfile,
+} from "../../shared/assets";
 import { townsList } from "../../shared/model";
 import { TekaWidget } from "../../widgets";
 
