@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import { mapIcon, houseIcon, coffeeIcon, penIcon } from "../../shared/assets";
+import { mapIcon, houseIcon, Manager, penIcon } from "../../shared/assets";
 import { NavBarItem } from "../../shared/ui";
 import { useNavigate } from "react-router-dom";
 export const NavBar = () => {
@@ -8,8 +8,8 @@ export const NavBar = () => {
     <div className={styles.wrapper}>
       <ul className={styles.list}>
         <NavBarItem
-          icon={houseIcon}
-          text="Главная"
+          icon={Manager}
+          text="Профиль"
           onClick={() => {
             router("/profile");
           }}
@@ -29,8 +29,8 @@ export const NavBar = () => {
           }}
         />
         <NavBarItem
-          icon={coffeeIcon}
-          text="Инфо"
+          icon={houseIcon}
+          text="Бизнес"
           onClick={() => {
             router("/info");
           }}
