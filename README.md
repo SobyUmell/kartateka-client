@@ -12,5 +12,5 @@ for install react-select: npm i --save react-select <br />
 for install react-slick: npm i --save react-slick <br /> 
 for install react-insta-stories: npm install --save react-insta-stories <br /> 
 for install react-router-dom: npm i --save react-router-dom <br/> 
-for install redux: npm i redux react-redux
-for install axios: npm i axios @types/axios
+for install redux: npm i redux react-redux <br/> 
+for install axios: npm i axios @types/axios <br/> 
