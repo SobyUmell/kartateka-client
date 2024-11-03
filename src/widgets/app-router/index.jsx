@@ -2,12 +2,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { privateRoutes, publicRoutes } from "../../router/index";
-import { Teka, Auth1 } from "../../pages";
+
 export const AppRouter = () => {
+  const auth = useSelector((state) => state.auth.isAuth);
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.isAuth);
+  const setAuth = (value) => {
+    dispatch({ type: "SET_AUTH", isAuth: value });
+  };
+  const setInfo = (value) => {
+    dispatch({ type: "SET_INFO", info: value });
+  };
+  const checkAuth = async () => {
+    try {
+      const string = API_URL + "/refresh";
+      const response = await axios.get(string, { withCredentials: true });
+      setInfo(response.data.user);
+      setAuth(true);
+      console.log(response);
+    } catch (e) {
+      console.log(e.responce?.data?.message);
+    }
+  };
+
   useEffect(() => {
-    console.log("Авторизированы? " + auth);
+    // поверяем авторизован ли пользователь при запуске сайта
+    if (localStorage.getItem("token")) checkAuth();
   }, []);
 
   return (
