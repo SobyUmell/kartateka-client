@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { privateRoutes, publicRoutes } from "../../router/index";
+import axios from "axios";
+import { API_URL } from "../../http";
 
 export const AppRouter = () => {
   const auth = useSelector((state) => state.auth.isAuth);
@@ -26,7 +28,9 @@ export const AppRouter = () => {
 
   useEffect(() => {
     // поверяем авторизован ли пользователь при запуске сайта
-    if (localStorage.getItem("token")) checkAuth();
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
   }, []);
 
   return (

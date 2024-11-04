@@ -27,7 +27,6 @@ export const Auth2 = () => {
       const responce = await AuthService.registration(email, password);
       console.log(responce)
       localStorage.setItem("token", responce.data.accessToken);
-      setAuth(true);
       setInfo(responce.data.user);
     } catch (e) {
       console.log(e.responce?.data?.message);

@@ -25,7 +25,9 @@ import eyeSvg from "./eye.svg";
 import ellipse from "./Ellipse2.svg";
 import smallEye from "./smallEye.svg";
 import Manager from "./Manager.svg";
+import User from "./User.svg";
 export {
+  User,
   Manager,
   arrowRight,
   arrowLeft,

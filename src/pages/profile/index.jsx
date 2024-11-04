@@ -23,8 +23,6 @@ export const Profile = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [flag, setFlag] = useState(false); // длина массива с моими местами
-  //const [name, setName] = useState("");
-  //const [town, setTown] = useState(townsList[0].value);
   const [nickName, setNickName] = useState("tsuomicasi");
   const [isDisabled, setIsDisabled] = useState(true);
   const handleFileChange = (e) => {
@@ -36,8 +34,8 @@ export const Profile = () => {
   const object = {
     values: ["Почта", "Пароль", "Имя", "Город"],
     svgs: [atsign, lock, user, city],
-    setStates: [setEmail, setPassword /* setName, setTown*/],
-    states: [email, password /* name, town*/],
+    setStates: [setEmail, setPassword ],
+    states: [email, password ],
     types: ["email", "password", "text"],
   };
   return (
@@ -78,13 +76,6 @@ export const Profile = () => {
                 svg={object.svgs[index]}
               />
             ))}
-            {/*<SelectTown
-              townsList={townsList}
-              label={"Город"}
-              svg={city}
-              disabled={isDisabled}
-              setTown={setTown}
-            /> */}
           </form>
         </div>
         <div className={styles.cotainerForWidget}>
