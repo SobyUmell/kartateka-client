@@ -60,6 +60,7 @@ export const AppRouter = () => {
           )}
       {auth ? (
         <Route path="*" element={<Navigate to={"/profile"} />} />
+        <Route path="*" element={<Navigate to={"/Teka"} />} />
       ) : (
         <Route path="*" element={<Navigate to={"/auth-1"} />} />
       )}

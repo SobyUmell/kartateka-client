@@ -15,7 +15,8 @@ import {
   saveIcon,
   editProfile,
 } from "../../shared/assets";
-  
+import { townsList } from "../../shared/model";
+import { TekaWidget } from "../../widgets";
 
 import { TekaWidget } from "../../widgets";
 import { miniProfileIMGs, miniProfileNames } from '../../widgets/teka-widget/model';
