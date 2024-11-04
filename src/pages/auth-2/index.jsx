@@ -1,31 +1,46 @@
-import {
-  DirectionButton,
-  PageProgressBar,
-  Input,
-  SelectTown,
-} from "../../shared/ui";
-import { city, atsign, lock, user } from "../../shared/assets";
+import { DirectionButton, PageProgressBar, Input } from "../../shared/ui";
+import { city, atsign, lock, user, smallEye } from "../../shared/assets";
 import styles from "./style.module.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { townsList } from "../../shared/model"; // испортируем список городов, которые поддерживает приложение
-import { smallEye } from "../../shared/assets";
-
+import { useDispatch, useSelector } from "react-redux";
+import AuthService from "../../services/AuthService";
 export const Auth2 = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  /* 
-  const [name, setName] = useState("");
-  const [town, setTown] = useState(townsList[0].value);
-  */
+  const dispatch = useDispatch();
+  const email = useSelector((state) => state.user.email);
+  const password = useSelector((state) => state.user.password);
+  const setEmail = (value) => {
+    dispatch({ type: "SET_EMAIL", email: value });
+  };
+  const setPassword = (value) => {
+    dispatch({ type: "SET_PASSWORD", password: value });
+  };
+  const setAuth = (value) => {
+    dispatch({ type: "SET_AUTH", isAuth: value });
+  };
+  const setInfo = (value) => {
+    dispatch({ type: "SET_INFO", info: value });
+  };
+  const registration = async (email, password) => {
+    console.log("Попытка регистрации");
+    try {
+      const responce = await AuthService.registration(email, password);
+      console.log(responce)
+      localStorage.setItem("token", responce.data.accessToken);
+      setInfo(responce.data.user);
+    } catch (e) {
+      console.log(e.responce?.data?.message);
+    }
+  };
+
   const object = {
-    values: ["Почта", "Пароль", "Имя", "Город"],
+    values: ["Почта", "Пароль"],
     svgs: [atsign, lock, user, city],
-    setStates: [setEmail, setPassword /* setName, setTown*/],
-    states: [email, password /* name, town*/],
+    setStates: [setEmail, setPassword],
+    states: [email, password],
     types: ["email", "password", "text"],
   };
-  
+
   const [visible, setVisible] = useState(false);
   const swapstate = () => {
     setVisible(!visible);
@@ -46,10 +61,10 @@ export const Auth2 = () => {
                 src={smallEye}
               ></img>
               {[...new Array(2)].map((value, index) => {
-                // чтобы отрисовать последний инпут заменить 2 на 3
                 return (
                   <Input
                     setState={object.setStates[index]}
+                    value={object.states[index]}
                     state={object.states[index]}
                     svg={object.svgs[index]}
                     key={index}
@@ -60,17 +75,9 @@ export const Auth2 = () => {
                   />
                 );
               })}
-              
-              {/* закоментировал selector города
-              <SelectTown
-                townsList={townsList}
-                label={"Город"}
-                svg={city}
-                setTown={setTown}
-              />
-              */}
             </form>
           </div>
+
           <div className={styles.groupButton}>
             <DirectionButton
               text={"Назад"}
@@ -84,6 +91,7 @@ export const Auth2 = () => {
               direction={1}
               onClick={() => {
                 router("/auth-3");
+                registration(email, password);
               }}
             />
           </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { eyeSvg } from "../../shared/assets";
-import { ellipse } from "../../shared/assets";
+import { eyeSvg,ellipse } from "../../shared/assets";
 import styles from "./style.module.scss";
 export const seeMore = ({ i, close, title, text, views, data, org, Src }) => {
   // контент истории

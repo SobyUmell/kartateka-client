@@ -3,12 +3,20 @@ import { InfoContainer } from "../../widgets/info-container";
 import { eye, gypsum, hand, loudspeaker } from "../../shared/assets";
 import { arrowLeft } from "../../shared/assets";
 import { Button } from "../../shared/ui";
+import { useNavigate } from "react-router-dom";
 export const Info = (props) => {
+  const router = useNavigate();
   return (
     <div className={styles.wrapper}>
       <div className={styles.img}>
         <div className={styles.blur}>
-          <img className={styles.absoluteArrow} src={arrowLeft}></img>
+          <img
+            className={styles.absoluteArrow}
+            onClick={() => {
+              router("/profile");
+            }}
+            src={arrowLeft}
+          ></img>
           <div className={styles.hand}></div>
         </div>
       </div>

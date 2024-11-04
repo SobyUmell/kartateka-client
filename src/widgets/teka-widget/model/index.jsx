@@ -1,3 +1,4 @@
+import { ellipse } from "../../../shared/assets/index";
 export const settings = {
   dots: false,
   infinite: false,
@@ -7,4 +8,8 @@ export const settings = {
   nextArrow: <></>,
   prevArrow: <></>,
 };
-export const postItems = ["", "", "", "", "", ""];
+export const postItems = ["", "", "", "", "", ""]; // количество историй
+
+export const miniProfileIMGs = [ellipse, ellipse, ellipse, ellipse, ellipse, ellipse];
+
+export const miniProfileNames = ["Concept", "Liberica", "DEPO"];

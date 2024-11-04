@@ -1,11 +1,21 @@
-import { DirectionButton } from "../../shared/ui";
-import { PageProgressBar } from "../../shared/ui";
+import {
+  DirectionButton,
+  PageProgressBar,
+  WaveBackground,
+} from "../../shared/ui";
 import { fingerPrint } from "../../shared/assets";
 import styles from "./style.module.scss";
-import { WaveBackground } from "../../shared/ui";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 export const Auth1 = () => {
   const router = useNavigate();
+  const dispatch = useDispatch();
+  const setPassword = (value) => {
+    dispatch({ type: "SET_PASSWORD", password: value });
+  };
+  const setEmail = (value) => {
+    dispatch({ type: "SET_EMAIL", isAuth: value });
+  };
   return (
     <WaveBackground>
       <PageProgressBar pageNumber={1} />
@@ -17,7 +27,22 @@ export const Auth1 = () => {
           <span className={styles.span}>concept id</span>
         </p>
         <div className={styles.groupButton}>
-          <DirectionButton text={"Продолжить"} direction={1} onClick={()=>{router("/auth-2");}} />
+          <DirectionButton
+            text={"Назад"}
+            direction={0}
+            onClick={() => {
+              router("/");
+              setPassword("");
+              setEmail("");
+            }}
+          />
+          <DirectionButton
+            text={"Продолжить"}
+            direction={1}
+            onClick={() => {
+              router("/auth-2");
+            }}
+          />
         </div>
       </div>
     </WaveBackground>
