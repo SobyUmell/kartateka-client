@@ -15,9 +15,10 @@ import {
   saveIcon,
   editProfile,
 } from "../../shared/assets";
-import { townsList } from "../../shared/model";
-import { TekaWidget } from "../../widgets";
+  
 
+import { TekaWidget } from "../../widgets";
+import { miniProfileIMGs, miniProfileNames } from '../../widgets/teka-widget/model';
 export const Profile = () => {
   const [fileUrl, setFileUrl] = useState(null);
   const [email, setEmail] = useState("");
@@ -80,6 +81,8 @@ export const Profile = () => {
         </div>
         <div className={styles.cotainerForWidget}>
           <TekaWidget
+            imgs={miniProfileIMGs}
+            names={miniProfileNames}
             clickHandler={() => {
               setFlag(true);
             }}
