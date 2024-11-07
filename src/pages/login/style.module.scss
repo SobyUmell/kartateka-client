@@ -108,3 +108,12 @@
   bottom: 5px;
   right: calc(50% - (68.7px / 2));
 }
+
+.error {
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+  color: red;
+  font-family: "Ubuntu";
+  font-style: normal;
+}

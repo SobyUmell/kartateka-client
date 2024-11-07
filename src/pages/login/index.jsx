@@ -51,6 +51,8 @@ export const Login = (props) => {
       setInfo(responce.data.user);
     } catch (e) {
       setError(true);
+      setEmail("");
+      setPassword("");
       console.log(e.responce?.data?.message);
     }
   };
@@ -77,6 +79,7 @@ export const Login = (props) => {
           <h1 className={styles.headerH1}>KARTATEKA</h1>
         </header>
         <form
+          className={styles.form}
           onSubmit={(e) => {
             e.preventDefault();
             login(email, password);
@@ -99,7 +102,11 @@ export const Login = (props) => {
               />
             );
           })}
-
+          {error ? (
+            <p className={styles.error}>Произошла ошибка авторизации</p>
+          ) : (
+            <></>
+          )}
           <div className={styles.preFotter}>
             <button type="submit" className={styles.btn}>
               Войти

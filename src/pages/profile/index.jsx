@@ -1,10 +1,5 @@
 import { useState } from "react";
-import {
-  Input,
-  InputNoBorder,
-  SelectTown,
-  WaveBackground,
-} from "../../shared/ui";
+import { Input, InputNoBorder, WaveBackground } from "../../shared/ui";
 import { NavBar, TekaWidget } from "../../widgets";
 import styles from "./style.module.scss";
 import {
@@ -19,13 +14,26 @@ import {
   miniProfileIMGs,
   miniProfileNames,
 } from "../../widgets/teka-widget/model";
+import { useSelector, useDispatch } from "react-redux";
 export const Profile = () => {
+  const dispatch = useDispatch();
   const [fileUrl, setFileUrl] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [flag, setFlag] = useState(false); // длина массива с моими местами
-  const [nickName, setNickName] = useState("tsuomicasi");
+  const nickname = useSelector((state) => state.user.info.username);
+  const infoTemp = useSelector((state) => state.user.info);
+  const setNickname = (value) => {
+    let info = {};
+    for (let field in infoTemp) {
+      info[field] = infoTemp[field];
+    }
+    info = { ...info, username: value };
+    console.log(info);
+    dispatch({ type: "SET_INFO", info: info });
+  };
   const [isDisabled, setIsDisabled] = useState(true);
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -33,11 +41,11 @@ export const Profile = () => {
     }
   };
   const object = {
-    values: ["Почта", "Пароль", "Имя", "Город"],
+    values: ["Почта", "Пароль"],
     svgs: [atsign, lock, user, city],
     setStates: [setEmail, setPassword],
     states: [email, password],
-    types: ["email", "password", "text"],
+    types: ["email", "password"],
   };
   return (
     <WaveBackground>
@@ -58,8 +66,8 @@ export const Profile = () => {
       </div>
       <InputNoBorder
         disabled={isDisabled}
-        onChange={setNickName}
-        value={nickName}
+        onChange={setNickname}
+        value={nickname}
         onClick={() => setIsDisabled(!isDisabled)}
         icon={isDisabled ? editProfile : saveIcon}
       />
