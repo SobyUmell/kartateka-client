@@ -5,7 +5,7 @@ import {
   SelectTown,
   WaveBackground,
 } from "../../shared/ui";
-import { NavBar } from "../../widgets";
+import { NavBar, TekaWidget } from "../../widgets";
 import styles from "./style.module.scss";
 import {
   atsign,
@@ -15,11 +15,10 @@ import {
   saveIcon,
   editProfile,
 } from "../../shared/assets";
-import { townsList } from "../../shared/model";
-import { TekaWidget } from "../../widgets";
-
-import { TekaWidget } from "../../widgets";
-import { miniProfileIMGs, miniProfileNames } from '../../widgets/teka-widget/model';
+import {
+  miniProfileIMGs,
+  miniProfileNames,
+} from "../../widgets/teka-widget/model";
 export const Profile = () => {
   const [fileUrl, setFileUrl] = useState(null);
   const [email, setEmail] = useState("");
@@ -36,8 +35,8 @@ export const Profile = () => {
   const object = {
     values: ["Почта", "Пароль", "Имя", "Город"],
     svgs: [atsign, lock, user, city],
-    setStates: [setEmail, setPassword ],
-    states: [email, password ],
+    setStates: [setEmail, setPassword],
+    states: [email, password],
     types: ["email", "password", "text"],
   };
   return (

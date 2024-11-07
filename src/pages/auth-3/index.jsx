@@ -1,5 +1,4 @@
-import { DirectionButton } from "../../shared/ui";
-import { PageProgressBar } from "../../shared/ui";
+import { DirectionButton,PageProgressBar } from "../../shared/ui";
 import { useNavigate } from "react-router-dom";
 import styles from "./style.module.scss";
 
