@@ -1,4 +1,4 @@
-import { DirectionButton,PageProgressBar } from "../../shared/ui";
+import { DirectionButton, PageProgressBar } from "../../shared/ui";
 import { useNavigate } from "react-router-dom";
 import styles from "./style.module.scss";
 
@@ -9,7 +9,14 @@ export const Auth3 = () => {
       <div className={styles.blur}>
         <PageProgressBar pageNumber={3} />
         <div className={styles.content}>
-          <div style={{display:'flex', justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
+          >
             <h2 className={styles.header}>Почти готово....</h2>
             <p className={styles.paragraph}>
               Пожалуйста, подтвердите свою личность через письмо
@@ -23,7 +30,13 @@ export const Auth3 = () => {
                 router("/auth-2");
               }}
             />
-            <DirectionButton text={"Продолжить"} direction={1} />
+            <DirectionButton
+              text={"Продолжить"}
+              direction={1}
+              onClick={() => {
+                router("/");
+              }}
+            />
           </div>
         </div>
       </div>

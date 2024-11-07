@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AuthService from "../../services/AuthService";
 export const Auth2 = () => {
   const dispatch = useDispatch();
+  const [error, setError] = useState(false);
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
   const setEmail = (value) => {
@@ -25,7 +26,7 @@ export const Auth2 = () => {
     console.log("Попытка регистрации");
     try {
       const responce = await AuthService.registration(email, password);
-      console.log(responce)
+      console.log(responce);
       localStorage.setItem("token", responce.data.accessToken);
       setInfo(responce.data.user);
     } catch (e) {
@@ -45,7 +46,19 @@ export const Auth2 = () => {
   const swapstate = () => {
     setVisible(!visible);
   };
-
+  const catchSubmit = (e) => {
+    e.preventDefault();
+    console.log("форма отправлена");
+    try {
+      registration(email, password);
+      router("/auth-3");
+      setEmail("");
+      setPassword("");
+    } catch (e) {
+      console.log(e);
+      setError(true);
+    }
+  };
   const router = useNavigate();
   return (
     <div className={styles.wrapper}>
@@ -54,7 +67,7 @@ export const Auth2 = () => {
         <div className={styles.content}>
           <h2 className={styles.header}>Создание аккаунта</h2>
           <div className={styles.inputWrapper}>
-            <form>
+            <form action="">
               <img
                 onClick={swapstate}
                 className={styles.eye}
@@ -86,14 +99,14 @@ export const Auth2 = () => {
                 router("/auth-1");
               }}
             />
-            <DirectionButton
-              text={"Продолжить"}
-              direction={1}
-              onClick={() => {
-                router("/auth-3");
-                registration(email, password);
-              }}
-            />
+
+              <DirectionButton
+                type="submit"
+                onSubmit={catchSubmit}
+                text={"Продолжить"}
+                direction={1}
+              />
+
           </div>
         </div>
       </div>

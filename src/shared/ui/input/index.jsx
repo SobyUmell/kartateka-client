@@ -1,7 +1,7 @@
 import classes from "./style.module.scss";
 export const Input = ({
   setState,
-  state,
+  value,
   svg,
   text,
   type,
@@ -31,7 +31,7 @@ export const Input = ({
       <input
         disabled={disabled}
         type={checkType()}
-        value={state}
+        value={value}
         onChange={(e) => {
           setState(e.target.value);
         }}

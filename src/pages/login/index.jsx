@@ -14,9 +14,8 @@ export const Login = (props) => {
   const dispatch = useDispatch();
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
-  const loginState = [email, password];
   const setEmail = (value) => {
-    dispatch({ type: "SET_EMAIL", email: value });
+    dispatch({ type: "SET_EMAIL", email: value });  
   };
   const setPassword = (value) => {
     dispatch({ type: "SET_PASSWORD", password: value });
@@ -90,7 +89,6 @@ export const Login = (props) => {
           {[...new Array(2)].map((value, index) => {
             return (
               <Input
-                value={loginState[index]}
                 setState={object.setStates[index]}
                 state={object.states[index]}
                 svg={object.svgs[index]}
