@@ -74,3 +74,20 @@
   right: 25px;
   margin-top: 137px;
 }
+.btn {
+  display: flex;
+  margin-top: 5%;
+  margin-left: calc((100% - 90%) / 2);
+  align-items: center;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 14px;
+  color: #000000;
+  background: #d9d9d9;
+  border-radius: 4px;
+  justify-content: center;
+  width: 90%;
+  height: 45px;
+}

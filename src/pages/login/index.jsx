@@ -15,7 +15,7 @@ export const Login = (props) => {
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
   const setEmail = (value) => {
-    dispatch({ type: "SET_EMAIL", email: value });  
+    dispatch({ type: "SET_EMAIL", email: value });
   };
   const setPassword = (value) => {
     dispatch({ type: "SET_PASSWORD", password: value });
@@ -48,9 +48,9 @@ export const Login = (props) => {
       localStorage.setItem("token", responce.data.accessToken);
       setAuth(true);
       setInfo(responce.data.user);
+      
     } catch (e) {
       setError(true);
-      setEmail("");
       setPassword("");
       console.log(e.responce?.data?.message);
     }
@@ -90,7 +90,7 @@ export const Login = (props) => {
             return (
               <Input
                 setState={object.setStates[index]}
-                state={object.states[index]}
+                value={object.states[index]}
                 svg={object.svgs[index]}
                 key={index}
                 text={object.values[index]}

@@ -47,7 +47,6 @@ export const Auth2 = () => {
     setVisible(!visible);
   };
   const catchSubmit = (e) => {
-    e.preventDefault();
     console.log("форма отправлена");
     try {
       registration(email, password);
@@ -67,7 +66,13 @@ export const Auth2 = () => {
         <div className={styles.content}>
           <h2 className={styles.header}>Создание аккаунта</h2>
           <div className={styles.inputWrapper}>
-            <form action="">
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                catchSubmit();
+              }}
+              action=""
+            >
               <img
                 onClick={swapstate}
                 className={styles.eye}
@@ -78,7 +83,6 @@ export const Auth2 = () => {
                   <Input
                     setState={object.setStates[index]}
                     value={object.states[index]}
-                    state={object.states[index]}
                     svg={object.svgs[index]}
                     key={index}
                     text={object.values[index]}
@@ -88,6 +92,9 @@ export const Auth2 = () => {
                   />
                 );
               })}
+              <button type="submit" className={styles.btn}>
+                Зарегистрироваться
+              </button>
             </form>
           </div>
 
@@ -99,14 +106,6 @@ export const Auth2 = () => {
                 router("/auth-1");
               }}
             />
-
-              <DirectionButton
-                type="submit"
-                onSubmit={catchSubmit}
-                text={"Продолжить"}
-                direction={1}
-              />
-
           </div>
         </div>
       </div>
