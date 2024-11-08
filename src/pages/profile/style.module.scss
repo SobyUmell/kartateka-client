@@ -39,3 +39,11 @@
   align-items: center;
   justify-content: center;
 }
+.eye {
+  width: 30px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  right: 25px;
+  margin-top: 137px;
+}

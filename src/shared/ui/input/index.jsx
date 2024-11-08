@@ -8,6 +8,7 @@ export const Input = ({
   disabled,
   visible,
   setVisible,
+  autocomplete,
   ...props
 }) => {
   const checkType = () => {
@@ -29,6 +30,7 @@ export const Input = ({
       <img className={classes.img} src={svg} alt={"error"}></img>
       <p className={classes.text}>{text}</p>
       <input
+        autoComplete={autocomplete}
         disabled={disabled}
         type={checkType()}
         value={value}

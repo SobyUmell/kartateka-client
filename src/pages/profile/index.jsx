@@ -9,6 +9,7 @@ import {
   user,
   saveIcon,
   editProfile,
+  smallEye,
 } from "../../shared/assets";
 import {
   miniProfileIMGs,
@@ -17,7 +18,10 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 export const Profile = () => {
   const dispatch = useDispatch();
-  const [setFileUrl] = useState(null);
+  const [visible, setVisible] = useState(false);
+  const swapstate = () => {
+    setVisible(!visible);
+  };
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
   const setEmail = (value) => {
@@ -57,6 +61,7 @@ export const Profile = () => {
     setStates: [setEmail, setPassword],
     states: [email, password],
     types: ["email", "password"],
+    autocomplete: ["off", "current-password"],
   };
   return (
     <WaveBackground>
@@ -84,19 +89,25 @@ export const Profile = () => {
       />
       <div className={styles.container}>
         <div className={styles.cotainerWithInput}>
-          <form>
-            {[...new Array(2)].map((value, index) => (
-              <Input
-                key={index}
-                disabled={isDisabled}
-                setState={object.setStates[index]}
-                value={object.states[index]}
-                text={object.values[index]}
-                type={object.types[index]}
-                svg={object.svgs[index]}
-              />
-            ))}
-          </form>
+          <img
+            onClick={!isDisabled ? swapstate : null}
+            className={styles.eye}
+            src={smallEye}
+          ></img>
+          {[...new Array(2)].map((value, index) => (
+            <Input
+              key={index}
+              disabled={isDisabled}
+              setState={object.setStates[index]}
+              value={object.states[index]}
+              text={object.values[index]}
+              type={object.types[index]}
+              svg={object.svgs[index]}
+              autocomplete={object.autocomplete[index]}
+              setVisible={setVisible}
+              visible={visible}
+            />
+          ))}
         </div>
         <div className={styles.cotainerForWidget}>
           <TekaWidget

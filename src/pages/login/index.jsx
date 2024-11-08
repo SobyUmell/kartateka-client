@@ -32,6 +32,7 @@ export const Login = (props) => {
     setStates: [setEmail, setPassword],
     states: [email, password],
     types: ["email", "password", "text"],
+    autocomplete: ['off',"current-password"]
   };
   const router = useNavigate();
   const navigateToRegistration = () => {
@@ -96,6 +97,7 @@ export const Login = (props) => {
                 text={object.values[index]}
                 type={object.types[index]}
                 visible={visible}
+                autocomplete={object.autocomplete[index]}
                 setVisible={setVisible}
               />
             );
