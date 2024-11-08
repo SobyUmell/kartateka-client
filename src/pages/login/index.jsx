@@ -48,7 +48,7 @@ export const Login = (props) => {
       localStorage.setItem("token", responce.data.accessToken);
       setAuth(true);
       setInfo(responce.data.user);
-      
+      setPassword("");
     } catch (e) {
       setError(true);
       setPassword("");

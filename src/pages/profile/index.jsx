@@ -18,8 +18,14 @@ import { useSelector, useDispatch } from "react-redux";
 export const Profile = () => {
   const dispatch = useDispatch();
   const [fileUrl, setFileUrl] = useState(null);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const email = useSelector((state) => state.user.info.email);
+  const password = useSelector((state) => state.user.info.password);
+  const setEmail = (value) => {
+    dispatch({ type: "SET_EMAIL", email: value });
+  };
+  const setPassword = (value) => {
+    dispatch({ type: "SET_PASSWORD", password: value });
+  };
   const [flag, setFlag] = useState(false); // длина массива с моими местами
   const nickname = useSelector((state) => state.user.info.username);
   const infoTemp = useSelector((state) => state.user.info);
@@ -32,6 +38,7 @@ export const Profile = () => {
     console.log(info);
     dispatch({ type: "SET_INFO", info: info });
   };
+
   const [isDisabled, setIsDisabled] = useState(true);
 
   const handleFileChange = (e) => {
@@ -79,7 +86,7 @@ export const Profile = () => {
                 key={index}
                 disabled={isDisabled}
                 setState={object.setStates[index]}
-                state={object.states[index]}
+                value={object.states[index]}
                 text={object.values[index]}
                 type={object.types[index]}
                 svg={object.svgs[index]}
