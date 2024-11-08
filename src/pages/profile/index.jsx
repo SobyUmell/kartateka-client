@@ -17,18 +17,22 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 export const Profile = () => {
   const dispatch = useDispatch();
-  const [fileUrl, setFileUrl] = useState(null);
-  const email = useSelector((state) => state.user.info.email);
-  const password = useSelector((state) => state.user.info.password);
+  const [setFileUrl] = useState(null);
+  const email = useSelector((state) => state.user.email);
+  const password = useSelector((state) => state.user.password);
   const setEmail = (value) => {
     dispatch({ type: "SET_EMAIL", email: value });
   };
   const setPassword = (value) => {
     dispatch({ type: "SET_PASSWORD", password: value });
   };
+  const setPhoto = (value) => {
+    dispatch({ type: "SET_PHOTO", photo: value });
+  };
   const [flag, setFlag] = useState(false); // длина массива с моими местами
   const nickname = useSelector((state) => state.user.info.username);
   const infoTemp = useSelector((state) => state.user.info);
+  const fileUrl = useSelector((state) => state.user.photo);
   const setNickname = (value) => {
     let info = {};
     for (let field in infoTemp) {
@@ -42,9 +46,9 @@ export const Profile = () => {
   const [isDisabled, setIsDisabled] = useState(true);
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files[0]; // схватили выбранный файл
     if (file) {
-      setFileUrl(URL.createObjectURL(file));
+      setPhoto(URL.createObjectURL(file));
     }
   };
   const object = {

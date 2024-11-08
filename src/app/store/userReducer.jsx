@@ -1,6 +1,7 @@
 const defaultState = {
   email: "",
   password: "",
+  photo: "",
   info: {},
 };
 export const userReducer = (state = defaultState, action) => {
@@ -21,6 +22,11 @@ export const userReducer = (state = defaultState, action) => {
       return {
         ...state,
         info: action.info,
+      };
+    case "SET_PHOTO":
+      return {
+        ...state,
+        photo: action.photo,
       };
     default:
       return state;

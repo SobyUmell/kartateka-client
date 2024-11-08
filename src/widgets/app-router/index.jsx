@@ -17,10 +17,9 @@ export const AppRouter = () => {
   const checkAuth = async () => {
     try {
       const string = API_URL + "/auth/refresh";
-      const response = await axios.get(string, { withCredentials: true });
+      const response = await axios.post(string, { withCredentials: true });
       setInfo(response.data.user);
       setAuth(true);
-      console.log(response);
     } catch (e) {
       console.log(e.responce?.data?.message);
     }
