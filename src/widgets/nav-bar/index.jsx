@@ -2,10 +2,10 @@ import styles from "./style.module.scss";
 import { mapIcon, houseIcon, Manager, penIcon } from "../../shared/assets";
 import { NavBarItem } from "../../shared/ui";
 import { useNavigate } from "react-router-dom";
-export const NavBar = () => {
+export const NavBar = ({ style }) => {
   const router = useNavigate();
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={style}>
       <ul className={styles.list}>
         <NavBarItem
           icon={Manager}

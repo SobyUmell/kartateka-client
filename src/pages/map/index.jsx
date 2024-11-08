@@ -2,6 +2,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import "../../shared/styles/leaflet-override.scss";
 import s from "./map.module.scss";
 import "leaflet/dist/leaflet.css";
+import { NavBar } from "../../widgets";
 import { useState } from "react";
 export const MapPage = () => {
   // I know where you live, your IP and MAC addresses are next
@@ -17,16 +18,20 @@ export const MapPage = () => {
     console.log(pointer == "Dark Mode");
   };
   return (
-    <div className={s.map_page}>
-      <MapContainer
-        center={position}
-        zoom={13}
-        scrollWheelZoom={false}
-        maxBounds={bounds}
-        maxBoundsViscosity={bounds}
-      >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      </MapContainer>
-    </div>
+    <>
+      <div  className={s.map_page}>
+        <MapContainer
+          style={{ height: "100%",margin: "0px"}}
+          center={position}
+          zoom={13}
+          scrollWheelZoom={false}
+          maxBounds={bounds}
+          maxBoundsViscosity={bounds}
+        >
+          <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></TileLayer>
+        </MapContainer>
+        <NavBar style={{position: "relative",bottom: "70px"}}/>
+      </div>
+    </>
   );
 };
