@@ -1,7 +1,30 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
 .map_page {
   width: 100%;
-  height: 107%;
+  height: 100%;
+  color: black;
+}
+.bottomBlock {
+  z-index: 9999;
+  position: relative;
+  bottom: 55px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
 }
+.bottomButton {
+  bottom: 15px;
+  width: 50%;
+}
+.bottomMenu {
+  background-color: black;
+  position: relative;
+  bottom: 333px;
+  display: flex;
+  flex-direction: column;
+  z-index: 998;
+}
+
