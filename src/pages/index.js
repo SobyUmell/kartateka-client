@@ -6,3 +6,4 @@ export { Profile } from "./profile/index";
 export { Teka } from "./teka/index";
 export { MapPage } from "./map/index";
 export { Login } from "./login/index";
+export { Business } from "./business/index";
