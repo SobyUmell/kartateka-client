@@ -1,7 +1,7 @@
 import { WaveBackground, TekaInput } from "../../shared/ui";
 import styles from "./style.module.scss";
 import { Search } from "../../shared/assets";
-import { TekaWidget, NavBar} from "../../widgets";
+import { TekaWidget, NavBar } from "../../widgets";
 import { useState, useEffect } from "react";
 import Stories from "react-insta-stories";
 import { seeMore } from "../../widgets";
@@ -83,6 +83,7 @@ export const Teka = () => {
               clickHandler={() => {
                 setFlag(true);
               }}
+              disableInfo={true}
               label={"Просмотрено"}
             />
             <TekaWidget
@@ -90,6 +91,7 @@ export const Teka = () => {
               clickHandler={() => {
                 setFlag(true);
               }}
+              disableInfo={true}
               label={"Рекомендации"}
             />
           </div>

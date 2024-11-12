@@ -63,7 +63,7 @@ export const MapPage = () => {
         {open ? (
           <div
             className={s.bottomMenu}
-            style={more ? { bottom: "690px", height: "690px" } : {}}
+            style={more ? { bottom: "697px", height: "650px" } : {}}
           >
             <div className={s.orgdiv}>
               <img src={!orgImage ? ellipse : orgImage} alt=""></img>
@@ -75,6 +75,7 @@ export const MapPage = () => {
                       position: "absolute",
                       right: "10px",
                       top: "4.25%",
+                      cursor: "pointer",
                     }}
                     onClick={swap}
                   >
@@ -96,7 +97,7 @@ export const MapPage = () => {
               </div>
             </div>
             <div>
-              <TekaWidget></TekaWidget>
+              <TekaWidget disableInfo={true}></TekaWidget>
             </div>
             {more ? null : (
               <div
@@ -104,6 +105,7 @@ export const MapPage = () => {
                   textAlign: "center",
                   marginTop: "10px",
                   fontSize: "30px",
+                  cursor: "pointer",
                 }}
                 onClick={() => setMore(!more)}
               >
@@ -113,7 +115,7 @@ export const MapPage = () => {
             {more ? (
               <div>
                 <p className={s.menu}>Меню</p>
-                <TekaWidget></TekaWidget>
+                <TekaWidget disableInfo={true}></TekaWidget>
               </div>
             ) : null}
           </div>
