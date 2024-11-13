@@ -10,6 +10,7 @@ export const TekaWidget = ({
   style,
   clickHandler,
   label,
+  disableInfo,
   ...props
 }) => {
   return (
@@ -18,11 +19,11 @@ export const TekaWidget = ({
       <Slider {...settings}>
         {postItems.map((value, index) => {
           return (
-            
             <PostItem
-              img={imgs?imgs[index]:null}
-              text={names?names[index]:null}
+              img={imgs ? imgs[index] : null}
+              text={names ? names[index] : null}
               clickHandler={clickHandler}
+              disableInfo={disableInfo}
               key={index}
             />
           );

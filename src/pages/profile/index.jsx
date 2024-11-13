@@ -116,6 +116,7 @@ export const Profile = () => {
             clickHandler={() => {
               setFlag(true);
             }}
+            disableInfo={false}
             label={"Просмотрено"}
           />
         </div>

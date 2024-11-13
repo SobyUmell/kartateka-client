@@ -32,7 +32,7 @@ export const Login = (props) => {
     setStates: [setEmail, setPassword],
     states: [email, password],
     types: ["email", "password", "text"],
-    autocomplete: ['off',"current-password"]
+    autocomplete: ["off", "current-password"],
   };
   const router = useNavigate();
   const navigateToRegistration = () => {
@@ -123,6 +123,7 @@ export const Login = (props) => {
           </div>
         </form>
       </div>
+
       <footer className={styles.footer}>pre alpha 0.0.1</footer>
     </WaveBackground>
   );
