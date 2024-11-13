@@ -5,6 +5,11 @@
   padding-top: 5%;
   height: calc(100% - 90px);
 }
+.topBlock {
+  position: absolute;
+  width: 100%;
+  box-shadow: 0px 20px 100px 15px #cf98d3;
+}
 .container {
   display: flex;
   margin-bottom: 5%;
@@ -51,11 +56,13 @@
   background: rgba(217, 217, 217, 0.1);
   border-radius: 8px;
   padding-left: 10px;
-  height: 30%;
+  height: 20%;
 }
-.menu{
+.menu {
   margin-top: 5%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
+  height: calc(100% - 30%);
+  flex-wrap: wrap;
 }

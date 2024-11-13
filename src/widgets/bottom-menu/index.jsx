@@ -1,8 +1,5 @@
 import s from "./styles.module.scss";
-import { ellipse } from "../../shared/assets";
-import { likeIcon } from "../../shared/assets";
-import { shareIcon } from "../../shared/assets";
-import { geoDataIcon } from "../../shared/assets";
+import { likeIcon, ellipse, shareIcon, geoDataIcon } from "../../shared/assets";
 import { TekaWidget } from "../teka-widget";
 import { useState } from "react";
 export const BottomMenu = ({
@@ -14,6 +11,7 @@ export const BottomMenu = ({
   open,
 }) => {
   const [more, setMore] = useState(false);
+
   return (
     <>
       {open ? (

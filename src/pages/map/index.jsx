@@ -12,6 +12,7 @@ export const MapPage = () => {
   const [orgName, setOrgName] = useState("Organization Name");
   const [type, setType] = useState("undefined");
   const [address, setAddress] = useState("undefined");
+  const [more, setMore] = useState(false);
 
   useEffect(() => {}, [open]); // когда открываем маркер будет подгружаться информация организации
   // I know where you live, your IP and MAC addresses are next

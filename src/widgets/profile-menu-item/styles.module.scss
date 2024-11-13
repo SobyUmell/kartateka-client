@@ -1,0 +1,36 @@
+.container {
+  width: 45%;
+  height: 0;
+  padding-bottom: 45%;
+  background: rgba(217, 217, 217, 0.15);
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+.container:not(:nth-child(2n)) {
+  margin-right: 10%;
+}
+.text {
+  position: absolute;
+  bottom: 30%;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 66px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.06em;
+
+  color: #3f93fa;
+  transform: rotate(-45deg);
+}
+.img {
+  position: absolute;
+  bottom: 20%;
+}
