@@ -1,6 +1,6 @@
 import styles from "./style.module.scss";
 import { InfoContainer } from "../../widgets/info-container";
-import { eye, gypsum, hand, loudspeaker,arrowLeft } from "../../shared/assets";
+import { eye, gypsum, hand, loudspeaker, arrowLeft } from "../../shared/assets";
 import { Button } from "../../shared/ui";
 import { useNavigate } from "react-router-dom";
 export const Info = (props) => {
@@ -15,7 +15,7 @@ export const Info = (props) => {
               router("/profile");
             }}
             src={arrowLeft}
-          ></img>
+          />
           <div className={styles.hand}></div>
         </div>
       </div>
