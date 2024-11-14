@@ -1,8 +1,10 @@
 import styles from "./styles.module.scss";
-export const ProfileMenuItem = ({ text, img }) => {
+export const ProfileMenuItem = ({ text, img, textColor }) => {
   return (
     <div className={styles.container}>
-      <p className={styles.text}>{text}</p>
+      <p style={{ color: textColor }} className={styles.text}>
+        {text}
+      </p>
       <img className={styles.img} src={img} alt="error" />
     </div>
   );

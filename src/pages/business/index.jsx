@@ -6,6 +6,7 @@ import { gypsum, loudspeaker, ellipse } from "../../shared/assets";
 export const Business = (props) => {
   const textArray = ["TEKA", "KARTA"];
   const imgArray = [gypsum, loudspeaker];
+  const colorsArray = ["#DBC3FD", "#3F93FA"];
   const [orgName, setorgName] = useState("undefined");
   const [typeorg, settypeorg] = useState("undefined");
   const [addressorg, setaddressorg] = useState("undefined");
@@ -35,6 +36,7 @@ export const Business = (props) => {
             {[...new Array(2)].map((item, index) => {
               return (
                 <ProfileMenuItem
+                  textColor={colorsArray[index]}
                   img={imgArray[index]}
                   text={textArray[index]}
                   key={index}
