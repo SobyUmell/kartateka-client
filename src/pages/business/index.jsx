@@ -4,8 +4,9 @@ import { NavBar, ProfileMenuItem } from "../../widgets";
 import styles from "./styles.module.scss";
 import { gypsum, loudspeaker, ellipse } from "../../shared/assets";
 export const Business = (props) => {
-  const textArray = ["TEKA", "KARTA"];
+  const textOutsideArray = ["публикации", "Меню"];
   const imgArray = [gypsum, loudspeaker];
+  const textArray = ["TEKA", "KARTA"];
   const colorsArray = ["#DBC3FD", "#3F93FA"];
   const [orgName, setorgName] = useState("undefined");
   const [typeorg, settypeorg] = useState("undefined");
@@ -40,6 +41,7 @@ export const Business = (props) => {
                   img={imgArray[index]}
                   text={textArray[index]}
                   key={index}
+                  textOutside={textOutsideArray[index]}
                 />
               );
             })}
