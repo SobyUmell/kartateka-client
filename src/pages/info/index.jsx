@@ -1,10 +1,16 @@
 import styles from "./style.module.scss";
 import { InfoContainer } from "../../widgets/info-container";
-import { eye, gypsum, hand, loudspeaker,arrowLeft } from "../../shared/assets";
+import { eye, gypsum, hand, loudspeaker, arrowLeft } from "../../shared/assets";
 import { Button } from "../../shared/ui";
 import { useNavigate } from "react-router-dom";
 export const Info = (props) => {
   const router = useNavigate();
+  const arrayP = [
+    "Добавление вашей метки на карту",
+    "Возможность создавать контент",
+    "Редактирование мини-профиля",
+  ];
+  const arrayimg = [eye, gypsum, loudspeaker];
   return (
     <div className={styles.wrapper}>
       <div className={styles.img}>
@@ -15,16 +21,18 @@ export const Info = (props) => {
               router("/profile");
             }}
             src={arrowLeft}
-          ></img>
+          />
           <div className={styles.hand}></div>
         </div>
       </div>
       <div className={styles.headerDiv}>
         <h2 className={styles.header}>Создайте первую метку за 0₽</h2>
       </div>
-      <InfoContainer p={"Добавление вашей метки на карту"} img={eye} />
-      <InfoContainer p={"Возможность создавать контент"} img={gypsum} />
-      <InfoContainer p={"Редактирование мини-профиля"} img={loudspeaker} />
+      {[...new Array(3)].map((item, index) => {
+        return (
+          <InfoContainer key={index} p={arrayP[index]} img={arrayimg[index]} />
+        );
+      })}
       <Button span="Upgrade">business</Button>
     </div>
   );

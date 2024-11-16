@@ -7,11 +7,13 @@ import {
   Auth3,
   MapPage,
   Login,
+  Business,
 } from "../pages";
 export const privateRoutes = [
   { path: "/", component: <Profile></Profile>, exact: true },
   { path: "/profile", component: <Profile></Profile>, exact: true },
-  { path: "/info", component: <Info></Info>, exact: true },
+  { path: "/info", component: <Business></Business>, exact: true },
+  { path: "/info2", component: <Info></Info>, exact: true },
   { path: "/teka", component: <Teka></Teka>, exact: true },
   { path: "/map", component: <MapPage></MapPage>, exact: true },
 ];
