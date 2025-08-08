@@ -81,29 +81,7 @@ export const Profile = () => {
     types: ["email", "password"],
     autocomplete: ["off", "current-password"],
   };
-  const declareOrganizations = async () => {
-    for (let i = 0; i < data.length; i++) {
-      const responce = await StoryService.createOrg(
-        data[i].avatar,
-        data[i].name,
-        data[i].type,
-        data[i].address
-      );
-      console.log(responce);
-    }
-  };
-  const registerUser = async()=>{
-    try{
-      const responce = await StoryService.userRegister();
-      console.log(responce);
-    }catch(e){
-      console.log(e.responce?.data?.message);
-    }
-  }
-  useEffect(() => {
-    registerUser();
-    declareOrganizations();
-  }, []);
+
   return (
     <WaveBackground>
       <button
