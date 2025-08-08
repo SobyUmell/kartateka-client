@@ -1,5 +1,5 @@
 const defaultState = {
-  isAuth: false,
+  isAuth: true,
 };
 export const authReducer = (state = defaultState, action) => {
   // action = {type:'', isAuth:''}
